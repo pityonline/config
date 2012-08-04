@@ -1,0 +1,28 @@
+# m h  dom mon dow   command
+SHELL=/bin/bash
+HOME=/home/pity
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:
+LANG=zh_CN.UTF-8
+
+# 每十分钟报一次时间
+*/10 * * * * env DISPLAY=:0.0 notify-send -i '/home/pity/icon/gnome-panel-clock.svg' "`date +\%c`"
+# 每天17:50报一次
+50 17 * * * env DISPLAY=:0.0 notify-send -t 10000 "快下班喽！！！！！"
+# 每个周五的九点到三点每十分钟报一次
+*/10 9-15 * * 5 env DISPLAY=:0.0 notify-send -t 10000 "今天要做报表！！！！！"
+# 周一到周五中午11开始订餐
+*/5 11-13 * * 1-5 env DISPLAY=:0.0 notify-send -t 10000 "订餐！"
+# 八点后每五分钟报一次
+*/5 20 * * * env DISPLAY=:0.0 notify-send -t 10000 -i '/home/pity/icon/gnome-panel-clock.svg' "八点时间"
+# 十点后每五分钟报一次
+*/5 22,23,0-2 * * * env DISPLAY=:0.0 notify-send -t 10000 -i '/home/pity/icon/sleep.gif' "快睡觉吧！都`date +\%T`啦！！！"
+# 关机倒计时
+# */1 * * * * env DISPLAY=:0.0 notify-send -t 10000 "还有n秒自动关机！！！！！"
+# 每三十分钟播放一次音乐
+*/30 * * * * /home/pity/test/alert.sh
+# 每十分钟向我手机发送一次短信
+# */10 * * * * /home/pity/test/msgme
+# 每半小时提示一次 todo list
+*/33 * * * * env DISPLAY=:0.0 notify-send -t 10000 "Check todo list!" "`todo`" && aplay /home/pity/snd/check.wav 2>/dev/null
+# */30 * * * * env DISPLAY=:0.0 notify-send -i '/home/pity/icon/gnome-panel-clock.svg' "晚上八点IRC有讲座！"
+# */3 * * * * curl ifconfig.me>>/home/pity/time.txt && date>>/home/pity/time.txt
