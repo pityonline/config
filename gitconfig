@@ -1,54 +1,32 @@
-[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-
-[remote "origin"]
-	url = git@github.com:pityonline/scripts.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-
+[user]
+	name	= pityonline
+	email	= pityonline@gmail.com
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = true
-	pager = true
-
-[color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
-
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
-
+	diff	= auto
+	branch	= auto
+	status	= auto
+	grep	= auto
 [alias]
-	a = add
-	af = add -f
-	br = branch
-	ca = commit -a
-	ci = commit
-	cm = commit -m
-	co = checkout
-	dc = diff --cached
-	df = diff
-	ds = diff --stat
-	dsc = diff --stat --cached
-	lg = log
-	lp = log -p
-	ls = ls-files
-	ps = push
-	pu = pull
-	sb = show-branch
-	st = status
-	w = whatchanged
+	a	= add
+	af	= add -f
+	b	= branch
+	c	= commit
+	ca	= commit -a
+	cm	= commit -m
+	co	= checkout
+	d	= diff
+	dc	= diff --cached
+	ds	= diff --stat
+	dsc	= diff --stat --cached
+	l	= log
+	lg	= log --graph
+	lp	= log -p
+	ls	= ls-files
+	m	= merge
+	pl	= pull
+	ps	= push
+	s	= status
+	t	= tag
+	w	= whatchanged
+[github]
+	user	= pityonline
