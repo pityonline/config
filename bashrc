@@ -125,9 +125,9 @@ alias less='/usr/share/vim/vim73/macros/less.sh'
 alias irc='irssi -c irc.freenode.net -p 7000 -n pityonline'
 alias cs='scrot -d 3 -c $(date +"%Y-%m-%d-%H%M%S").png'
 alias vps='ssh -D 7070 pity@pityonline.info'
-alias jaunty='ssh -p 2020 jaunty@192.168.2.123'
+# alias jaunty='ssh -p 2020 jaunty@192.168.2.123'
 alias vpn='sudo service openvpn restart'
-alias jj='ssh jaunty@pityonline.3322.org -p 2020'
+# alias jj='ssh jaunty@pityonline.3322.org -p 2020'
 alias flush='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
 # less语法高亮
