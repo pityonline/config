@@ -291,6 +291,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "c", function () awful.util.spawn("chromium-browser") end),
     awful.key({ modkey }, "e", function () awful.util.spawn("pcmanfm") end),
     awful.key({ modkey }, "g", function () awful.util.spawn("empathy") end),
+    awful.key({ modkey }, "p", function () awful.util.spawn("evince") end),
     awful.key({ modkey }, "Up", function () awful.util.spawn("amixer -q sset Master 10%+ unmute") end),
     awful.key({ modkey }, "Down", function () awful.util.spawn("amixer -q sset Master 10%- unmute") end),
 
