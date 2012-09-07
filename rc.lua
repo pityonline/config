@@ -7,16 +7,24 @@ require("beautiful")
 -- Notification library
 require("naughty")
 
+-- Private naughty config
+naughty.config.default_preset.position         = "bottom_right"
+-- naughty.config.default_preset.fg               = beautiful.fg_focus
+-- naughty.config.default_preset.bg               = beautiful.bg_focus
+-- naughty.config.default_preset.border_color     = beautiful.border_focus
+
 -- Load Debian menu entries
 require("debian.menu")
 
 -- auto run app  
+
 awful.util.spawn_with_shell("ibus-daemon -x -r -d")  
 -- awful.util.spawn_with_shell("nm-applet --sm-disable")  
 awful.util.spawn_with_shell("gnome-power-manager")  
 awful.util.spawn_with_shell("gnome-sound-applet")  
 awful.util.spawn_with_shell("dropbox start")  
 awful.util.spawn_with_shell("/home/pity/scripts/numpad")  
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -61,7 +69,6 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
 {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
@@ -72,7 +79,8 @@ layouts =
     awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    awful.layout.suit.magnifier,
+    awful.layout.suit.floating
 }
 -- }}}
 
@@ -85,33 +93,47 @@ layouts =
 -- end
 
 -- 下面这个循环创建了默认的9个tag
-tags = {}
-for s = 1, screen.count() do
-    -- 每个屏幕都有一个tag的table(这里所说的table指的是lua中的概念，大致等价于数组）
-    tags[s] = {}
-    
-    -- 每个屏幕创建9个tag，把9改为其他数字就能改变tag的数目
-    for tagnumber = 1, 9 do
-        tags[s][tagnumber] = tag({ name = tagnumber, layout = layouts[1] })
-        tags[s][tagnumber].screen = s
-    end
-    -- 另最后一个屏幕的第一个tag处于选中状态
-    tags[s][1].selected = true
-end
-
--- 默认的tag名字是数字1-9，对于鼠标点击来说有点太小。
--- 你可以通过如下的方法设置自己的tag名称
-tags[1][1].name = "Term"
-tags[1][2].name = "Internet"
-tags[1][3].name = "IRC"
-tags[1][4].name = "Tag1"
-tags[1][5].name = "Tag2"
-tags[1][6].name = "Tag3"
-tags[1][7].name = "File"
-tags[1][8].name = "Music"
-tags[1][9].name = "Virtual"
+-- tags = {}
+-- for s = 1, screen.count() do
+--     -- 每个屏幕都有一个tag的table(这里所说的table指的是lua中的概念，大致等价于数组）
+--     tags[s] = {}
+--     
+--     -- 每个屏幕创建9个tag，把9改为其他数字就能改变tag的数目
+--     for tagnumber = 1, 9 do
+--         tags[s][tagnumber] = tag({ name = tagnumber, layout = layouts[1] })
+--         tags[s][tagnumber].screen = s
+--     end
+--     -- 另最后一个屏幕的第一个tag处于选中状态
+--     tags[s][2].selected = true
+-- end
+-- 
+-- -- 默认的tag名字是数字1-9，对于鼠标点击来说有点太小。
+-- -- 你可以通过如下的方法设置自己的tag名称
+-- tags[1][1].name = "Term"
+-- tags[1][2].name = "Internet"
+-- tags[1][3].name = "IRC"
+-- tags[1][4].name = "Tag1"
+-- tags[1][5].name = "Tag2"
+-- tags[1][6].name = "Tag3"
+-- tags[1][7].name = "File"
+-- tags[1][8].name = "Music"
+-- tags[1][9].name = "Virtual"
 
 -- }}}
+
+ -- {{{ Tags
+ -- Define a tag table which will hold all screen tags.
+ tags = {
+   names  = { "main", "terminal", "www", "irc", "im", "office", "music", "media", "virtual" },
+   layout = { layouts[9], layouts[9], layouts[9], layouts[9], layouts[9],
+              layouts[9], layouts[9], layouts[1], layouts[1]
+ }}
+ for s = 1, screen.count() do
+     -- Each screen has its own tag table.
+     tags[s] = awful.tag(tags.names, s, tags.layout)
+     tags[s][2].selected = true
+ end
+ -- }}}
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
