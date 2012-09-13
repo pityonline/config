@@ -125,13 +125,13 @@ layouts =
  -- Define a tag table which will hold all screen tags.
  tags = {
    names  = { "main", "terminal", "www", "irc", "im", "office", "music", "media", "virtual" },
-   layout = { layouts[9], layouts[9], layouts[9], layouts[9], layouts[9],
-              layouts[9], layouts[9], layouts[1], layouts[1]
+   layout = { layouts[1], layouts[9], layouts[1], layouts[9], layouts[1],
+              layouts[1], layouts[1], layouts[1], layouts[1]
  }}
  for s = 1, screen.count() do
      -- Each screen has its own tag table.
      tags[s] = awful.tag(tags.names, s, tags.layout)
-     tags[s][2].selected = true
+     tags[s][1].selected = true
  end
  -- }}}
 
