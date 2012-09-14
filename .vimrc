@@ -54,7 +54,7 @@ filetype on
 set background=dark
 colorscheme desert
 
-" Always show status bar 
+" Always show status bar
 " set laststatus=2
 
 " Highlight searching
@@ -116,4 +116,4 @@ nn <C-K> :bp<cr>
 " NERDTree
 noremap <silent> <leader>t :NERDTreeToggle<CR>
 
-filetype plugin indent on  
+filetype plugin indent on
