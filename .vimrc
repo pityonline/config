@@ -71,11 +71,11 @@ map <silent> <leader><cr> :noh<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " 自动缩进
-set ai
+" set ai
 " 智能缩进
-set si
+" set si
 " C/C++ 风格缩进
-set cindent
+" set cindent
 
 " tab转化为4个字符
 set expandtab
