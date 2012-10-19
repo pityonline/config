@@ -17,7 +17,7 @@ let g:mapleader = ","
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
 " Fast editing .vimrc
-nm <leader>e :e ~/.gvimrc<cr>
+nm <leader>e :e ~/.vimrc<cr>
 " Fast saving
 nm <leader>w :w!<cr>
 

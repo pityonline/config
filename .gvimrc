@@ -14,7 +14,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 " When .vimrc is edited, reload it
-autocmd! bufwritepost .vimrc source ~/.vimrc
+autocmd! bufwritepost .vimrc source ~/.gvimrc
 
 " Fast editing .vimrc
 nm <leader>e :e ~/.gvimrc<cr>
