@@ -100,6 +100,7 @@ alias la='ls -lha'
 alias gls='gls --color=auto'
 alias less='/usr/share/vim/vim73/macros/less.sh'
 alias irc='irssi -c irc.freenode.net -p 7000 -n pityonline'
+alias gd='~/scripts/git-dropbox.sh'
 alias gcc='gcc -Wall'
 alias chmod='chmod -v'
 # alias lnp='ln -P -f'  # ln of BSD makes hard links by default

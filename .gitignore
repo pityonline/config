@@ -1,2 +1,4 @@
 easy.conf
 *~
+.DS_Store
+openvpn/*
