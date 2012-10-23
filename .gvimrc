@@ -65,8 +65,37 @@ se bs=eol,start,indent " bs = backspace
 se bg=dark " bg = background
 color desert
 
+" Change the status line color
+" http://vim.wikia.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
 " Always show status bar
-" se ls=2  " ls is laststatus
+se ls=2  " ls is laststatus
+
+" now set it up to change the status line based on mode
+" if version >= 700
+"  au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
+"   au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
+" endif
+
+" default the statusline to green when entering Vim
+hi statusline guibg=green
+
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline guibg=magenta
+  elseif a:mode == 'r'
+    hi statusline guibg=blue
+  else
+    hi statusline guibg=red
+  endif
+endfunction
+
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline guibg=green
+
+" The following lines in vimrc will display the time of day and calender date on the editor status line
+" http://vim.wikia.com/wiki/Display_date-and-time_on_status_line
+" set ruf=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)  " ruf = rulerformat
+set stl=\ %<%F%1*%m%*%r%h\ %4{&encoding}\ %y%=\ %24(%{strftime('%a\ %b\ %e\ %I:%M')}%)\ %8(%l,%c%)\ %4(%P%) " stl = statusline
 
 " Highlight searching
 se hls " hls = hlsearch
