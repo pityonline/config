@@ -1,1 +1,43 @@
-/Users/pity/.gitconfig
+[user]
+	name = pityonline
+	email = pityonline@gmail.com
+[color]
+	diff	= auto
+	branch	= auto
+	status	= auto
+	grep	= auto
+[alias]
+	a	= add
+	af	= add -f
+	b	= branch
+	c	= commit
+	ca	= commit -a
+	cm	= commit -m
+	co	= checkout
+	d	= diff
+	dc	= diff --cached
+	ds	= diff --stat
+	dsc	= diff --stat --cached
+	l	= log
+	lg	= log --graph
+	lp	= log -p
+	ls	= ls-files
+	m	= merge
+	pl	= pull
+	ps	= push
+	s	= status
+	t	= tag
+	w	= whatchanged
+[github]
+	user	= pityonline
+[core]
+	excludesfile = /Users/pity/.gitignore_global
+	quotepath = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = simple
