@@ -27,20 +27,18 @@ se pt=<F10>  " pt = pastetoggle
 " Auto change to current directory
 se acd " acd = autochdir
 
-filetype plugin indent on   " REQUIRED
+filetype plugin indent on   " REQUIRED!
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set font for Gui/MacVim
-se gfn=Menlo:h16   " gfn = guifont
+se gfn=Menlo\ for\ Powerline:h16   " gfn = guifont
+" se gfn=Inconsolata-dz\ for\ Powerline:h16   " gfn = guifont
 
 " Show line numbers
 se nu  " nu = number
-
-" No line numbers
-nm <leader>n :se nonu<cr>
 
 " Show commands
 se sc  " sc = show commands
@@ -63,39 +61,19 @@ se bs=eol,start,indent " bs = backspace
 
 " Colors
 se bg=dark " bg = background
-color desert
+colo desert " colo = colorscheme
 
 " Change the status line color
 " http://vim.wikia.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
 " Always show status bar
 se ls=2  " ls is laststatus
 
-" now set it up to change the status line based on mode
-" if version >= 700
-"  au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
-"   au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
-" endif
-
-" default the statusline to green when entering Vim
-hi statusline guibg=green
-
-function! InsertStatuslineColor(mode)
-  if a:mode == 'i'
-    hi statusline guibg=magenta
-  elseif a:mode == 'r'
-    hi statusline guibg=blue
-  else
-    hi statusline guibg=red
-  endif
-endfunction
-
-au InsertEnter * call InsertStatuslineColor(v:insertmode)
-au InsertLeave * hi statusline guibg=green
-
 " The following lines in vimrc will display the time of day and calender date on the editor status line
 " http://vim.wikia.com/wiki/Display_date-and-time_on_status_line
 " set ruf=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)  " ruf = rulerformat
-set stl=\ %<%F%1*%m%*%r%h\ %4{&encoding}\ %y%=\ %24(%{strftime('%a\ %b\ %e\ %I:%M')}%)\ %8(%l,%c%)\ %4(%P%) " stl = statusline
+" :h stl
+" Powerline is better but no time or date items, disable the stl way.
+" se stl=\ %<%F%1*%m%*%r%h\ %4{&encoding}\ %y%=\ %24(%{strftime('%a\ %b\ %e\ %I:%M')}%)\ %8(%l,%c%)\ %4(%P%) " stl = statusline
 
 " Highlight searching
 se hls " hls = hlsearch
@@ -182,7 +160,7 @@ no <Down> gj
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-no <silent> <leader>t :NERDTreeToggle<CR>
+no <silent> <leader>n :NERDTreeToggle<CR>
 
 " Vimwiki
 " from http://wiki.ktmud.com/tips/vim/vimwiki-guide.html
@@ -229,3 +207,57 @@ no <silent> <leader>c :Calendar<CR>
 
 no <silent> <leader>r :Renamer<cr>
 no <silent> <leader>s :Ren<cr>
+
+" Powerline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set terminal color 256
+se t_Co=256
+
+" Choose theme
+" Should set gfn for Powerline, it's already set in Interface.
+let g:Powerline_symbols = 'fancy'
+let g:Powerline_colorscheme = 'skwp'
+
+" Taglist
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nn <silent> <leader>t :TlistToggle<CR>
+let Tlist_Ctags_Cmd = '/usr/local/Cellar/ctags/5.8/bin/ctags'
+let Tlist_Use_Right_Window = 1
+let Tlist_File_Fold_Auto_Close = 1
+let Tlist_Auto_Open = 1
+let Tlist_Show_One_File = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Exit_OnlyWindow = 1
+" let g:winManagerWindowLayout=’FileExplorer’
+
+" Vundle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+no <silent> <leader>bi :BundleInstall<cr>
+
+set nocompatible    " be iMproved
+filetype off    " REQUIRED!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" 使用Vundle来管理Vundle，这个必须要有。
+Bundle 'gmarik/vundle'
+" 接下来是要安装的插件
+" 格式1：Github上其他用户的仓库（非vim-scripts账户里的仓库，所以要加Github用户名）
+" Bundle 'tpope/vim-fugitive'
+" Bundle 'tpope/vim-rails.git'
+" 格式2：vim-scripts里面的仓库，直接打仓库名即可。
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+" 格式3：非Github的Git仓库
+" Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+Bundle 'The-NERD-tree'
+Bundle 'taglist.vim'
+Bundle 'vimwiki'
+Bundle 'renamer.vim'
+Bundle 'mattn/calendar-vim'
+Bundle 'Lokaltog/vim-powerline'
+
+filetype plugin indent on   " REQUIRED!
