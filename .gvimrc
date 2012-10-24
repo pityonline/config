@@ -40,6 +40,9 @@ se gfn=Menlo\ for\ Powerline:h16   " gfn = guifont
 " Show line numbers
 se nu  " nu = number
 
+" Show relative numbers
+se rnu  " rnu = relative number
+
 " Show commands
 se sc  " sc = show commands
 
@@ -74,6 +77,7 @@ se ls=2  " ls is laststatus
 " :h stl
 " Powerline is better but no time or date items, disable the stl way.
 " se stl=\ %<%F%1*%m%*%r%h\ %4{&encoding}\ %y%=\ %24(%{strftime('%a\ %b\ %e\ %I:%M')}%)\ %8(%l,%c%)\ %4(%P%) " stl = statusline
+" se stl=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Highlight searching
 se hls " hls = hlsearch
@@ -106,11 +110,6 @@ se ts=4    " tabstop
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 syn on
-
-" Markdown language syntax settings
-augroup mkd
-    autocmd BufRead *.mkd se ai formatoptions=tcroqn2 comments=n:>
-augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Alias
@@ -212,12 +211,13 @@ no <silent> <leader>s :Ren<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set terminal color 256
-se t_Co=256
+se t_Co=256 " REQUIRED!
 
 " Choose theme
 " Should set gfn for Powerline, it's already set in Interface.
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_colorscheme = 'skwp'
+let g:Powerline_cache_enabled = 0
 
 " Taglist
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -228,7 +228,7 @@ let Tlist_Use_Right_Window = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Auto_Open = 1
 let Tlist_Show_One_File = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_GainFocus_On_ToggleOpen = 0
 let Tlist_Exit_OnlyWindow = 1
 " let g:winManagerWindowLayout=’FileExplorer’
 
@@ -242,11 +242,26 @@ filetype off    " REQUIRED!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Colors
+se bg=dark  " bg = background
+
+Bundle 'desert256.vim'
+Bundle 'Solarized'
+Bundle 'colorful256.vim'
+Bundle 'darkburn'
+Bundle 'Solarized'
+Bundle '256-jungle'
+Bundle 'Lucius'
+Bundle 'lilydjwg_dark'
+Bundle 'wombat256.vim'
+colo desert
+" colo solarized
+" let g:solarized_termcolors=256
+
 " 使用Vundle来管理Vundle，这个必须要有。
 Bundle 'gmarik/vundle'
 " 接下来是要安装的插件
 " 格式1：Github上其他用户的仓库（非vim-scripts账户里的仓库，所以要加Github用户名）
-" Bundle 'tpope/vim-fugitive'
 " Bundle 'tpope/vim-rails.git'
 " 格式2：vim-scripts里面的仓库，直接打仓库名即可。
 " Bundle 'L9'
@@ -259,5 +274,8 @@ Bundle 'vimwiki'
 Bundle 'renamer.vim'
 Bundle 'mattn/calendar-vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
 
 filetype plugin indent on   " REQUIRED!
