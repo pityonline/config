@@ -83,7 +83,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 #     alias ls='ls --color=auto'
 # fi
 
-# 将vim作为crontab的默认编辑器
+# make Vim as the default editor.
 export EDITOR=/usr/bin/vim
 
 # My alias list
@@ -93,8 +93,8 @@ alias ....='cd ../../../'
 alias search='brew search'
 alias show='brew info'
 alias install='brew install'
-# alias changelog='brew changelog'
 alias au='brew update && brew upgrade'
+alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias ll='ls -lh'
 alias la='ls -lha'
 alias gls='gls --color=auto'
@@ -112,7 +112,6 @@ alias download_history="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.Q
 alias flush='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
 # Colorful Man
-
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
@@ -124,3 +123,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # 解决 ssh 乱码
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# Paths
+# export PATH=/usr/local/share/npm/bin:$PATH
+# export PATH=/usr/local/Cellar/ruby/1.9.3-p286/bin:$PATH
