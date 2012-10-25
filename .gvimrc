@@ -109,6 +109,7 @@ se ts=4    " tabstop
 " Syntax
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+syn enable
 syn on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -176,11 +177,12 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
 \ 'path_html': '~/Dropbox/vimwiki/html/',
 \ 'html_header': '~/Dropbox/Public/vimwiki_template/header.htm',
 \ 'html_footer': '~/Dropbox/Public/vimwiki_template/footer.htm',
-\ 'diary_link_count': 5},
-\{'path': '~/Dropbox/vimwiki/'}]
+\ 'syntax': 'markdown',
+\ 'diary_link_count': 5}]
+" \{'path': '~/Dropbox/vimwiki/'}
  
 " 对中文用户来说，我们并不怎么需要驼峰英文成为维基词条
-" let g:vimwiki_camel_case = 0
+let g:vimwiki_camel_case = 0
  
 " 标记为完成的 checklist 项目会有特别的颜色
 let g:vimwiki_hl_cb_checked = 1
@@ -246,14 +248,13 @@ call vundle#rc()
 se bg=dark  " bg = background
 
 Bundle 'desert256.vim'
-Bundle 'Solarized'
 Bundle 'colorful256.vim'
 Bundle 'darkburn'
-Bundle 'Solarized'
 Bundle '256-jungle'
 Bundle 'Lucius'
 Bundle 'lilydjwg_dark'
 Bundle 'wombat256.vim'
+Bundle 'altercation/vim-colors-solarized'
 colo desert
 " colo solarized
 " let g:solarized_termcolors=256
