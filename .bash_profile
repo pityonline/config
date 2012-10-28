@@ -1,15 +1,5 @@
 # .bash_profile is for Mac OS.
 
-# export PS1="\u@mac:\w > "
-# export CLICOLOR="xterm-color"
-# export LSCOLORS="gxfxcxdxbxegedabagacad"
-
-# aliases
-# alias cd..="cd .."
-# alias l="ls"
-# alias ll="ls -l"
-# alias la="ls -al"
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -93,6 +83,7 @@ alias ....='cd ../../../'
 alias search='brew search'
 alias show='brew info'
 alias install='brew install'
+alias remove='brew uninstall'
 alias au='brew update && brew upgrade'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias ll='ls -lh'
@@ -103,11 +94,14 @@ alias irc='irssi -c irc.freenode.net -p 7000 -n pityonline'
 alias gd='~/scripts/git-dropbox.sh'
 alias gcc='gcc -Wall'
 alias chmod='chmod -v'
-# alias lnp='ln -P -f'  # ln of BSD makes hard links by default
 alias CDA='shntool split -t "%n-%t" -f *.cue -o wav *.ape'
 alias CDF='shntool split -t "%n-%t" -f *.cue -o wav *.flac'
 alias vps='ssh pityonline.info'
 alias vpn='sudo service openvpn restart'
+alias mou='/Applications/Mou.app/Contents/MacOS/Mou'
+alias mplayer='/Applications/MPlayerX.app/Contents/MacOS/MPlayerX'
+alias gimp='/Applications/GIMP.app/Contents/MacOS/GIMP'
+alias kindle='/Applications/Kindle.app/Contents/MacOS/Kindle'
 alias download_history="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'"
 alias flush='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
