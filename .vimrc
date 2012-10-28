@@ -15,6 +15,7 @@ let g:mapleader = ","
 
 " When .vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
+autocmd! bufwritepost .vimrc call Pl#Load() " REQUIRED! 必须写在此，必须加叹号，否则 Powerline 在保存文件时会丢失颜色。
 
 " Fast editing .vimrc
 nm <leader>e :e ~/.vimrc<cr>
@@ -164,6 +165,8 @@ no <silent> <leader>n :NERDTreeToggle<CR>
 
 " 使用 <F4> 转换所有 wiki 为 html
 map <F4> :VimwikiAll2HTML<cr>
+" 使用 <leader> 来标记 todo状态
+no <silent> <leader>x :VimwikiToggleListItem<cr>
 " 是否在词条文件保存时就输出html  这个会让保存大词条比较慢
 " 所以我默认没有启用  有需要的话就把这一行复制到下面去
 "     \ 'auto_export': 1,
@@ -191,7 +194,8 @@ let g:vimwiki_menu = ''
  
 " 是否在计算字串长度时用特别考虑中文字符
 let g:vimwiki_CJK_length = 1
- 
+" 是否去掉换行
+let g:vimwiki_list_ignore_newline=0
 " let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1'
 
 " Calendar
@@ -216,6 +220,9 @@ se t_Co=256 " REQUIRED!
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_colorscheme = 'skwp'
 let g:Powerline_cache_enabled = 0
+" Solve Powerline color-lost after save a file.
+" autocmd bufwritepost .vimrc call Pl#Load()  " REQUIRED! 这句必须写在 fast-saving 后面，写在这里不能生效。
+" autocmd BufDelete * call Pl#Load()
 
 " Taglist
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -233,12 +240,15 @@ let Tlist_Exit_OnlyWindow = 1
 " Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-no <silent> <leader>bi :BundleInstall<cr>
+no <silent> <leader>b :BundleInstall<cr>
 
-set nocompatible    " be iMproved
+" set nocompatible    " be iMproved
 filetype off    " REQUIRED!
-set rtp+=~/.vim/bundle/vundle/
+se rtp+=~/.vim/bundle/vundle/   " rtp = runtimepath
 call vundle#rc()
+
+" 使用Vundle来管理Vundle，这个必须要有。
+Bundle 'gmarik/vundle'
 
 " Colors
 
@@ -256,9 +266,7 @@ se bg=dark  " bg = background
 let g:solarized_termcolors=256
 colo solarized
 
-" 使用Vundle来管理Vundle，这个必须要有。
-Bundle 'gmarik/vundle'
-" 接下来是要安装的插件
+" Bundle 安装格式
 " 格式1：Github上其他用户的仓库（非vim-scripts账户里的仓库，所以要加Github用户名）
 " Bundle 'tpope/vim-rails.git'
 " 格式2：vim-scripts里面的仓库，直接打仓库名即可。
@@ -266,6 +274,7 @@ Bundle 'gmarik/vundle'
 " Bundle 'FuzzyFinder'
 " 格式3：非Github的Git仓库
 " Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+
 Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'vimwiki'
@@ -275,5 +284,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
+Bundle 'suan/vim-instant-markdown'
+Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 
 filetype plugin indent on   " REQUIRED!
