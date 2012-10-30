@@ -176,7 +176,6 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
 \ 'path_html': '~/Dropbox/vimwiki/html/',
 \ 'html_header': '~/Dropbox/Public/vimwiki_template/header.htm',
 \ 'html_footer': '~/Dropbox/Public/vimwiki_template/footer.htm',
-\ 'syntax': 'markdown',
 \ 'diary_link_count': 5}]
 " \{'path': '~/Dropbox/vimwiki/'}
  
