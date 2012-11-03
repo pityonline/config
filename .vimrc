@@ -22,6 +22,9 @@ nm <leader>e :e ~/.vimrc<cr>
 " Fast saving
 nm <leader>w :w!<cr>
 
+" Set jj to <ESC>
+ino jj <ESC>
+
 " Set paste toggle key
 se pt=<F10>  " pt = pastetoggle
 
@@ -235,6 +238,12 @@ let Tlist_Show_One_File = 1
 let Tlist_GainFocus_On_ToggleOpen = 0
 let Tlist_Exit_OnlyWindow = 1
 " let g:winManagerWindowLayout=’FileExplorer’
+
+" Syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 打开文件时检查
+let g:syntastic_check_on_open=1
 
 " Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
