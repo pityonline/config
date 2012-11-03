@@ -10,9 +10,10 @@
 	a	= add
 	af	= add -f
 	b	= branch
-	c	= commit
+    bl  = blame
 	ca	= commit -a
 	cm	= commit -m
+	cl	= clone
 	co	= checkout
 	d	= diff
 	dc	= diff --cached
@@ -25,6 +26,9 @@
 	m	= merge
 	pl	= pull
 	ps	= push
+    rc  = rm --cached
+    rs  = reset HEAD^
+    rl  = reset HEAD
 	s	= status
 	t	= tag
 	w	= whatchanged
