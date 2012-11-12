@@ -230,7 +230,7 @@ let g:Powerline_cache_enabled = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nn <silent> <leader>t :TlistToggle<CR>
-let Tlist_Ctags_Cmd = '/usr/local/Cellar/ctags/5.8/bin/ctags'
+let Tlist_Ctags_Cmd = '`which ctags`'
 let Tlist_Use_Right_Window = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Auto_Open = 1

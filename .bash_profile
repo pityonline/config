@@ -16,7 +16,7 @@ shopt -s histappend
 # 忽略重复的命令
 # export HISTCONTROL=ignoredups
 # 忽略由冒号分割的这些命令
-export HISTIGNORE="[   ]*:&:bg:fg:exit"
+export HISTIGNORE="[   ]*:&:bg:fg:exit:cd:ls:open"
 # 设置保存历史命令的文件大小
 export HISTFILESIZE=1000000
 # 保存历史命令条数
@@ -102,6 +102,11 @@ alias mou='/Applications/Mou.app/Contents/MacOS/Mou'
 alias mplayer='/Applications/MPlayerX.app/Contents/MacOS/MPlayerX'
 alias gimp='/Applications/GIMP.app/Contents/MacOS/GIMP'
 alias kindle='/Applications/Kindle.app/Contents/MacOS/Kindle'
+alias gst='~/Repo/gitstats/gitstats'
+# Mysql alias
+alias mysqlstart='sudo /Library/StartupItems/MySQLCOM/MySQLCOM restart'
+alias mysql='/usr/local/mysql/bin/mysql'
+alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 alias download_history="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'"
 alias flush='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
@@ -120,4 +125,6 @@ export LC_ALL=en_US.UTF-8
 
 # Paths
 # export PATH=/usr/local/share/npm/bin:$PATH
-# export PATH=/usr/local/Cellar/ruby/1.9.3-p286/bin:$PATH
+export PATH=/usr/local/Cellar/ruby/1.9.3-p327/bin:$PATH
+export PATH=~/Repo/android-sdk/tools:$PATH
+export PATH=~/Repo/android-sdk/platform-tools:$PATH
