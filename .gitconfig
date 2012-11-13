@@ -37,3 +37,5 @@
 [core]
 	excludesfile = /Users/pity/.gitignore_global
 	quotepath = false
+[push]
+	default = simple
