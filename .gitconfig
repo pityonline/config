@@ -27,8 +27,8 @@
 	pl	= pull
 	ps	= push
     rc  = rm --cached
-    rs  = reset HEAD^
-    rl  = reset HEAD
+    rl  = reset HEAD^
+    rs  = reset HEAD
 	s	= status
 	t	= tag
 	w	= whatchanged
