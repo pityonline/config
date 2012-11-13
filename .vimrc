@@ -230,7 +230,7 @@ let g:Powerline_cache_enabled = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nn <silent> <leader>t :TlistToggle<CR>
-let Tlist_Ctags_Cmd = '/usr/local/Cellar/ctags/5.8/bin/ctags'
+let Tlist_Ctags_Cmd = '`which ctags`'
 let Tlist_Use_Right_Window = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Auto_Open = 1
@@ -238,6 +238,9 @@ let Tlist_Show_One_File = 1
 let Tlist_GainFocus_On_ToggleOpen = 0
 let Tlist_Exit_OnlyWindow = 1
 " let g:winManagerWindowLayout=’FileExplorer’
+
+" update tags faster in insert mode
+autocmd CursorMovedI * silent! TlistHighlightTag
 
 " Syntastic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
