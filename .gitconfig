@@ -10,7 +10,9 @@
 	a	= add
 	af	= add -f
 	b	= branch
+    bi  = bisect
     bl  = blame
+	c   = commit
 	ca	= commit -a
 	cm	= commit -m
 	cl	= clone
@@ -19,6 +21,7 @@
 	dc	= diff --cached
 	ds	= diff --stat
 	dsc	= diff --stat --cached
+    h   = help
 	l	= log
 	lg	= log --graph
 	lp	= log -p
@@ -26,7 +29,10 @@
 	m	= merge
 	pl	= pull
 	ps	= push
+    r   = remote
+    rb  = rebase
     rc  = rm --cached
+    rf  = reflog
     rl  = reset HEAD^
     rs  = reset HEAD
 	s	= status
