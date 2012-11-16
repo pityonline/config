@@ -128,3 +128,6 @@ export LC_ALL=en_US.UTF-8
 export PATH=/usr/local/Cellar/ruby/1.9.3-p327/bin:$PATH
 export PATH=~/Repo/android-sdk/tools:$PATH
 export PATH=~/Repo/android-sdk/platform-tools:$PATH
+
+# Git completion
+source /usr/local/Cellar/git/1.8.0/etc/bash_completion.d/git-completion.bash
