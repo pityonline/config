@@ -17,15 +17,20 @@
 	cm	= commit -m
 	cl	= clone
 	co	= checkout
+    cp  = cherry-pick
 	d	= diff
 	dc	= diff --cached
 	ds	= diff --stat
 	dsc	= diff --stat --cached
+    f   = fetch
     h   = help
 	l	= log
+    l1  = log --pretty=oneline
+    lc  = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lg	= log --graph
 	lp	= log -p
 	ls	= ls-files
+    lt  = !git log -a --pretty=oneline --graph | git name-rev --stdin --tags
 	m	= merge
 	pl	= pull
 	ps	= push
@@ -34,7 +39,7 @@
     rc  = rm --cached
     rf  = reflog
     rl  = reset HEAD^
-    rs  = reset HEAD
+    rs  = reset
 	s	= status
 	t	= tag
 	w	= whatchanged
