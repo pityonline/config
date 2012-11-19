@@ -126,6 +126,7 @@ export LC_ALL=en_US.UTF-8
 
 # Paths
 # export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/Cellar/ruby/1.9.3-p327/bin:$PATH
 export PATH=~/Repo/android-sdk/tools:$PATH
 export PATH=~/Repo/android-sdk/platform-tools:$PATH
