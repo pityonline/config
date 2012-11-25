@@ -62,7 +62,7 @@ se ru  " ru = ruler
 " Show mode
 se smd " smd = show mode
 
-se wmnu    " wmnu s wildmenu
+se wmnu    " wmnu = wildmenu
 
 se bs=eol,start,indent " bs = backspace
 
@@ -199,6 +199,8 @@ let g:vimwiki_CJK_length = 1
 " 是否去掉换行
 let g:vimwiki_list_ignore_newline=0
 " let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1'
+" 对设置了的文件类型不进行扩展
+let g:vimwiki_file_exts = 'c, cpp, wav, txt, h, hpp, zip, sh, awk, ps, pdf'
 
 " Calendar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
