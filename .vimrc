@@ -175,12 +175,12 @@ no <silent> <leader>x :VimwikiToggleListItem<cr>
 "     \ 'auto_export': 1,
 
 " 多个维基项目的配置
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
-\ 'path_html': '~/Dropbox/vimwiki/html/',
-\ 'html_header': '~/Dropbox/Public/vimwiki_template/header.htm',
-\ 'html_footer': '~/Dropbox/Public/vimwiki_template/footer.htm',
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki/',
+\ 'path_html': '~/Documents/vimwiki/html/',
+\ 'html_header': '~/Documents/vimwiki_template/header.htm',
+\ 'html_footer': '~/Documents/vimwiki_template/footer.htm',
 \ 'diary_link_count': 5}]
-" \{'path': '~/Dropbox/vimwiki/'}
+" \{'path': '~/Documents/vimwiki/'}
  
 " 对中文用户来说，我们并不怎么需要驼峰英文成为维基词条
 let g:vimwiki_camel_case = 0
