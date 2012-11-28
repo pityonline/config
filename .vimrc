@@ -181,6 +181,10 @@ let g:vimwiki_list = [{'path': '~/Documents/vimwiki/',
 \ 'html_footer': '~/Documents/vimwiki_template/footer.htm',
 \ 'diary_link_count': 5}]
 " \{'path': '~/Documents/vimwiki/'}
+
+" Forget about markdown syntax support, it *DOES* support that, but *CANNOT*
+" convert to html. So what's the point?!
+"\ 'syntax': 'markdown',
  
 " 对中文用户来说，我们并不怎么需要驼峰英文成为维基词条
 let g:vimwiki_camel_case = 0
@@ -196,9 +200,13 @@ let g:vimwiki_menu = ''
  
 " 是否在计算字串长度时用特别考虑中文字符
 let g:vimwiki_CJK_length = 1
+
 " 是否去掉换行
-let g:vimwiki_list_ignore_newline=0
-" let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1'
+let g:vimwiki_list_ignore_newline = 0
+
+" 在 vimwiki 里使用的 html 标签列表，以逗号分隔
+let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1'
+
 " 对设置了的文件类型不进行扩展
 let g:vimwiki_file_exts = 'c, cpp, wav, txt, h, hpp, zip, sh, awk, ps, pdf'
 
