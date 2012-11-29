@@ -31,6 +31,9 @@ se pt=<F10>  " pt = pastetoggle
 " Auto change to current directory
 se acd " acd = autochdir
 
+" Chinese help language
+se hlg=cn   "hlg = helplang
+
 filetype plugin indent on   " REQUIRED!
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
