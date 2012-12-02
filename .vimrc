@@ -255,6 +255,9 @@ let Tlist_Exit_OnlyWindow = 1
 " update tags faster in insert mode
 autocmd CursorMovedI * silent! TlistHighlightTag
 
+" vimwiki toc support
+let Tlist_Vimwiki_Settings = 'wiki;h:Headers'
+
 " Syntastic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -308,7 +311,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
-Bundle 'suan/vim-instant-markdown'
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+Bundle 'Syntastic'
 
 filetype plugin indent on   " REQUIRED!
