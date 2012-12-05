@@ -181,14 +181,15 @@ no <silent> <leader>x :VimwikiToggleListItem<cr>
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki/',
 \ 'path_html': '~/Documents/vimwiki/html/',
 \ 'html_header': '~/Documents/vimwiki_template/header.htm',
-\ 'html_footer': '~/Documents/vimwiki_template/footer.htm',
+\ 'html_footer': '~/Documents/vimwiki_template/footer.htm'},
+\ {'path': '~/Documents/private/',
+\ 'path_html': '~/Documents/private/html/',
 \ 'diary_link_count': 5}]
-" \{'path': '~/Documents/vimwiki/'}
 
-" Forget about markdown syntax support, it *DOES* support that, but *CANNOT*
-" convert to html. So what's the point?!
-"\ 'syntax': 'markdown',
- 
+" 使用第三方工具把 markdown 转为 html。
+" \ 'custom_wiki2html': '/Users/pity/Repo/vimwiki_md2html/misaka_md2html.py',
+" \ 'syntax': 'markdown',
+
 " 对中文用户来说，我们并不怎么需要驼峰英文成为维基词条
 let g:vimwiki_camel_case = 0
  
