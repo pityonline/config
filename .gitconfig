@@ -48,6 +48,10 @@
     rl  = reset HEAD^
     rs  = reset
 	s	= status
+    st  = stash
+    sta = stash apply
+    std = stash drop
+    stl = stash list
 	t	= tag
 	w	= whatchanged
 [github]
