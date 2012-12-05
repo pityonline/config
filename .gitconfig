@@ -26,6 +26,7 @@
 	dc	= diff --cached
 	ds	= diff --stat
 	dsc	= diff --stat --cached
+	dt  = difftool
     f   = fetch
     h   = help
 	l	= log
@@ -56,3 +57,9 @@
 	quotepath = false
 [push]
 	default = simple
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[merge]
+	tool = vimdiff
