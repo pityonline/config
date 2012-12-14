@@ -38,7 +38,7 @@ filetype plugin indent on   " REQUIRED!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set font for Gui/MacVim
-se gfn=Menlo\ for\ Powerline:h16   " gfn = guifont
+se gfn=Menlo\ for\ Powerline:h17   " gfn = guifont
 " se gfn=Inconsolata-dz\ for\ Powerline:h16   " gfn = guifont
 
 " Show line numbers
