@@ -10,12 +10,14 @@
 	a	= add
 	af	= add -f
 	ai  = add -i
+	ap  = add -p
 	b	= branch
     bv  = branch -v
     bi  = bisect
     bl  = blame
 	c   = commit
 	ca	= commit -a
+	cam	= commit --amend
 	cm	= commit -m
     cf  = config
     cg  = config --global
