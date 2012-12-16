@@ -36,6 +36,9 @@ export PATH=/usr/local/bin:$PATH
 SHELL=`which zsh`
 
 # 定义颜色 {{{
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
 if [[ ("$TERM" = *256color || "$TERM" = screen*) && -f $HOME/.lscolor256 ]]; then
     #use prefefined colors
     eval $(dircolors -b $HOME/.lscolor256)
