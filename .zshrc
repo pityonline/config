@@ -610,6 +610,10 @@ for i in mkdir mv cp;       alias $i="nocorrect $i"
 
 #}}}
 
+# 解决 ssh 乱码
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 source $HOME/.oh-my-zsh/lib/git.zsh
 source $HOME/.oh-my-zsh/custom/pityonline.zsh-theme
 
