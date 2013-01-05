@@ -23,7 +23,10 @@ nm <leader>e :e ~/.gvimrc<cr>
 nm <leader>w :w!<cr>
 
 " Set jj to <ESC>
-ino jj <ESC>
+ino jk <ESC>
+
+" Set SPACE to toggle folding
+nn <Space> za
 
 " Set paste toggle key
 se pt=<F10>  " pt = pastetoggle
