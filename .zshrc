@@ -1,6 +1,6 @@
 #!/bin/zsh
 # This config file is created by Roylez Zuo, cloned from git@github.com:roylez/dotfiles.git
-# I modified something about alias and themes.
+# I modified something about alias and themes. Also some scripts are from oh-my-zsh.
 #
 # vim:fdm=marker
 # Use zsh 5.0.0
@@ -619,3 +619,11 @@ source $HOME/.oh-my-zsh/lib/git.zsh
 source $HOME/.oh-my-zsh/custom/pityonline.zsh-theme
 
 typeset -U PATH
+
+#paths alias
+hash -d wiki="/Users/pity/Documents/vimwiki"
+hash -d res="/Users/pity/Repo/latex/Templates/Resume"
+hash -d py="/Users/pity/Repo/python"
+hash -d pub="/Users/pity/Repo/pub"
+hash -d blog="/Users/pity/Repo/octopress"
+hash -d book="/Users/pity/Dropbox/EBooks"
