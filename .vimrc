@@ -268,6 +268,12 @@ let Tlist_Vimwiki_Settings = 'wiki;h:Headers'
 " 打开文件时检查
 let g:syntastic_check_on_open=1
 
+" Pydiction
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+filetype plugin on
+let g:pydiction_location = '$HOME/.vim/bundle/Pydiction/complete-dict'
+
 " Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -317,5 +323,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'Syntastic'
+Bundle 'Jinja'
+Bundle 'surround.vim'
+Bundle 'Pydiction'
 
 filetype plugin indent on   " REQUIRED!
