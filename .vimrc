@@ -110,6 +110,16 @@ se et      " expandtab
 se sta     " smarttab
 se sw=4    " shiftwidth
 se ts=4    " tabstop
+se sts=4   " softtabstop
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FileType
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ruby
+autocmd BufNewFile,BufRead *.rb,*.erb set et sw=2 ts=2 sts=2
+autocmd FileType ruby set et sw=2 ts=2 sts=2
+autocmd FileType yaml set et sw=2 ts=2 sts=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax
