@@ -111,21 +111,15 @@ se si  " si = smartindent
 " C/C++ 风格缩进
 se cin " cin = cindent
 
-" tab转化为4个字符
+" 默认使用 2 空格缩进
 se et      " expandtab
 se sta     " smarttab
-se sw=4    " shiftwidth
-se ts=4    " tabstop
-se sts=4   " softtabstop
+se sw=2    " shiftwidth
+se ts=2    " tabstop
+se sts=2   " softtabstop
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" FileType
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" ruby
-autocmd BufNewFile,BufRead *.rb,*.erb set et sw=2 ts=2 sts=2
-autocmd FileType ruby set et sw=2 ts=2 sts=2
-autocmd FileType yaml set et sw=2 ts=2 sts=2
+" makefile 强制使用 4 空格缩进
+au FileType make set et sw=4 ts=4 sts=4
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax
