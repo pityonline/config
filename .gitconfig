@@ -1,71 +1,71 @@
 [user]
-	name = pityonline
-	email = pityonline@gmail.com
+  name = pityonline
+  email = pityonline@gmail.com
 [color]
-	diff	= auto
-	branch	= auto
-	status	= auto
-	grep	= auto
+  diff  = auto
+  branch  = auto
+  status  = auto
+  grep  = auto
 [alias]
-	a	= add
-	af	= add -f
-	ai  = add -i
-	ap  = add -p
-	b	= branch
-    bv  = branch -v
-    bi  = bisect
-    bl  = blame
-	c   = commit
-	ca	= commit -a
-	cam	= commit --amend
-	cm	= commit -m
-    cf  = config
-    cg  = config --global
-	cl	= clone
-	co	= checkout
-    cp  = cherry-pick
-	d	= diff
-	dc	= diff --cached
-	ds	= diff --stat
-	dsc	= diff --stat --cached
-	dt  = difftool
-    f   = fetch
-    h   = help
-	l	= log
-    l1  = log --pretty=oneline
-    lc  = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	lg	= log --graph
-	lp	= log -p
-    lt  = !git log -a --pretty=oneline --graph | git name-rev --stdin --tags
-	ls	= ls-files
-	m	= merge
-	pl	= pull
-	ps	= push
-    pt  = push --tags
-    r   = remote
-    rv  = remote -v
-    rb  = rebase
-    rc  = rm --cached
-    rf  = reflog
-    rl  = reset HEAD^
-    rs  = reset
-	s	= status
-    st  = stash
-    sta = stash apply
-    std = stash drop
-    stl = stash list
-	t	= tag
-	w	= whatchanged
+  a  = add
+  af  = add -f
+  ai  = add -i
+  ap  = add -p
+  b  = branch
+  bv  = branch -v
+  bi  = bisect
+  bl  = blame
+  c   = commit
+  ca  = commit -a
+  cam  = commit --amend
+  cm  = commit -m
+  cf  = config
+  cg  = config --global
+  cl  = clone
+  co  = checkout
+  cp  = cherry-pick
+  d  = diff
+  dc  = diff --cached
+  ds  = diff --stat
+  dsc  = diff --stat --cached
+  dt  = difftool
+  f   = fetch
+  h   = help
+  l  = log
+  l1  = log --pretty=oneline
+  lc  = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lg  = log --graph
+  lp  = log -p
+  lt  = !git log -a --pretty=oneline --graph | git name-rev --stdin --tags
+  ls  = ls-files
+  m  = merge
+  pl  = pull
+  ps  = push
+  pt  = push --tags
+  r   = remote
+  rv  = remote -v
+  rb  = rebase
+  rc  = rm --cached
+  rf  = reflog
+  rl  = reset HEAD^
+  rs  = reset
+  s  = status
+  st  = stash
+  sta = stash apply
+  std = stash drop
+  stl = stash list
+  t  = tag
+  w  = whatchanged
 [github]
-	user	= pityonline
+  user  = pityonline
 [core]
-	excludesfile = /Users/pity/.gitignore_global
-	quotepath = false
+  excludesfile = /Users/pity/.gitignore_global
+  quotepath = false
 [push]
-	default = simple
+  default = simple
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [difftool]
-	prompt = false
+  prompt = false
 [merge]
-	tool = vimdiff
+  tool = vimdiff
