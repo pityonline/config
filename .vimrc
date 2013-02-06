@@ -14,8 +14,8 @@ let mapleader = ","
 let g:mapleader = ","
 
 " When .vimrc is edited, reload it
-autocmd! bufwritepost .vimrc source ~/.vimrc
-autocmd! bufwritepost .vimrc call Pl#Load() " REQUIRED! 必须写在此，必须加叹号，否则 Powerline 在保存文件时会丢失颜色。
+au! bufwritepost .vimrc source ~/.vimrc
+au! bufwritepost .vimrc call Pl#Load() " REQUIRED! 必须写在此，必须加叹号，否则 Powerline 在保存文件时会丢失颜色。
 
 " Fast editing .vimrc
 nm <leader>e :e ~/.vimrc<cr>
@@ -250,8 +250,8 @@ let g:Powerline_symbols = 'fancy'
 let g:Powerline_colorscheme = 'skwp'
 let g:Powerline_cache_enabled = 0
 " Solve Powerline color-lost after save a file.
-" autocmd bufwritepost .vimrc call Pl#Load()  " REQUIRED! 这句必须写在 fast-saving 后面，写在这里不能生效。
-" autocmd BufDelete * call Pl#Load()
+" au bufwritepost .vimrc call Pl#Load()  " REQUIRED! 这句必须写在 fast-saving 后面，写在这里不能生效。
+" au BufDelete * call Pl#Load()
 
 " Taglist
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -267,7 +267,7 @@ let Tlist_Exit_OnlyWindow = 1
 " let g:winManagerWindowLayout=’FileExplorer’
 
 " update tags faster in insert mode
-autocmd CursorMovedI * silent! TlistHighlightTag
+au CursorMovedI * silent! TlistHighlightTag
 
 " vimwiki toc support
 let Tlist_Vimwiki_Settings = 'wiki;h:Headers'
