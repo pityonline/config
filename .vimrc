@@ -25,6 +25,9 @@ nm <leader>w :w!<cr>
 " Set jj to <ESC>
 ino jk <ESC>
 
+" Map Q to gq
+map Q gq
+
 " Set SPACE to toggle folding
 nn <Space> za
 
@@ -44,7 +47,7 @@ filetype plugin indent on   " REQUIRED!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set font for Gui/MacVim
-se gfn=Menlo\ for\ Powerline:h16   " gfn = guifont
+se gfn=Menlo\ for\ Powerline:h17   " gfn = guifont
 " se gfn=Inconsolata-dz\ for\ Powerline:h16   " gfn = guifont
 
 " Show line numbers
@@ -90,6 +93,9 @@ se hls " hls = hlsearch
 
 " Increase searching
 se is  " is = incsearch
+
+" Show blank symbols when :se list
+se lcs=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
