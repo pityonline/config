@@ -283,8 +283,8 @@ let g:syntastic_check_on_open=1
 " Pydiction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-filetype plugin on
-let g:pydiction_location = '$HOME/.vim/bundle/Pydiction/complete-dict'
+" filetype plugin on
+" let g:pydiction_location = '$HOME/.vim/bundle/Pydiction/complete-dict'
 
 " Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -337,6 +337,7 @@ Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'Syntastic'
 Bundle 'Jinja'
 Bundle 'surround.vim'
-Bundle 'Pydiction'
+" Bundle 'Pydiction'
+Bundle 'snipMate'
 
 filetype plugin indent on   " REQUIRED!
