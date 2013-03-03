@@ -247,8 +247,10 @@ se t_Co=256 " REQUIRED!
 " Choose theme
 " Should set gfn for Powerline, it's already set in Interface.
 let g:Powerline_symbols = 'fancy'
-let g:Powerline_colorscheme = 'skwp'
+let g:Powerline_theme = 'default'
+let g:Powerline_colorscheme = 'default'
 let g:Powerline_cache_enabled = 0
+
 " Solve Powerline color-lost after save a file.
 " au bufwritepost .vimrc call Pl#Load()  " REQUIRED! 这句必须写在 fast-saving 后面，写在这里不能生效。
 " au BufDelete * call Pl#Load()
