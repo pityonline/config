@@ -36,6 +36,7 @@
   lc  = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lg  = log --graph
   lp  = log -p
+  lst = log --stat
   lt  = !git log -a --pretty=oneline --graph | git name-rev --stdin --tags
   ls  = ls-files
   m  = merge
