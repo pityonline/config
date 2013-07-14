@@ -191,13 +191,29 @@ no <silent> <leader>x :VimwikiToggleListItem<cr>
 "     \ 'auto_export': 1,
 
 " 多个维基项目的配置
-let g:vimwiki_list = [{'path': '~/Documents/vimwiki/',
-\ 'path_html': '~/Documents/vimwiki/html/',
-\ 'html_header': '~/Documents/vimwiki_template/header.htm',
-\ 'html_footer': '~/Documents/vimwiki_template/footer.htm'},
-\ {'path': '~/Documents/private/',
-\ 'path_html': '~/Documents/private/html/',
-\ 'diary_link_count': 5}]
+"let g:vimwiki_list = [{'path': '~/Documents/vimwiki/',
+"\ 'path_html': '~/Documents/vimwiki/html/',
+"\ 'html_header': '~/Documents/vimwiki_template/header.htm',
+"\ 'html_footer': '~/Documents/vimwiki_template/footer.htm'},
+"\ {'path': '~/Documents/private/',
+"\ 'path_html': '~/Documents/private/html/',
+"\ 'diary_link_count': 5}]
+
+let wiki                  = {}
+let wiki.path             = '~/Documents/vimwiki/'
+let wiki.path_html        = '~/Documents/vimwiki/html/'
+let wiki.template_path    = '~/Documents/templates/'
+let wiki.template_default = 'site'
+let wiki.template_ext     = '.html'
+
+let private               = {}
+let private.path          = '~/Documents/private/'
+let private.path_html     = '~/Documents/private/html/'
+let wiki.template_path    = '~/Documents/templates/'
+let wiki.template_default = 'site'
+let wiki.template_ext     = '.html'
+
+let g:vimwiki_list  = [wiki, private]
 
 " 使用第三方工具把 markdown 转为 html。
 " \ 'custom_wiki2html': '/Users/pity/Repo/vimwiki_md2html/misaka_md2html.py',
