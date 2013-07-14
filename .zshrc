@@ -37,16 +37,16 @@ SHELL=`which zsh`
 
 # 定义颜色 {{{
 export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+# export LSCOLORS=ExFxBxDxCxegedabagacad
 source "`brew --prefix grc`/etc/grc.bashrc"
 
-if [[ ("$TERM" = *256color || "$TERM" = screen*) && -f $HOME/.lscolor256 ]]; then
+if [[ ("$TERM" = *256color || "$TERM" = screen* || "$TERM" = xterm*) && -f $HOME/.dir_colors ]]; then
     #use prefefined colors
-    eval $(dircolors -b $HOME/.lscolor256)
+    eval $(gdircolors -b $HOME/.dir_colors)
     use_256color=1
     export TERMCAP=${TERMCAP/Co\#8/Co\#256}
 else
-    [[ -f $HOME/.lscolor ]] && eval $(dircolors -b $HOME/.lscolor)
+    [[ -f $HOME/.dir_colors ]] && eval $(gdircolors -b $HOME/.dir_colors)
 fi
 
 #color defined for prompts and etc
@@ -107,7 +107,8 @@ autoload -U is-at-least
 # 命令补全参数{{{
 #   zsytle ':completion:*:completer:context or command:argument:tag'
 zmodload -i zsh/complist        # for menu-list completion
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" "ma=${${use_256color+1;7;38;5;143}:-1;7;33}"
+zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
+#zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" "ma=${${use_256color+1;7;38;5;143}:-1;7;33}"
 #ignore list in completion
 zstyle ':completion:*' ignore-parents parent pwd directory
 #menu selection in completion
@@ -260,7 +261,7 @@ get_prompt_git() {
 #{{{ functions to set gnu screen title
 # active command as title in terminals
 case $TERM in
-    xterm*|rxvt*)
+    xterm*|rxvt*|iTerm*)
         function title() { print -nP "\e]0;$1\a" } 
         ;;
     screen*)
@@ -528,11 +529,15 @@ bindkey "\e\r" run-command-in-split-screen
 
 # 环境变量及其他参数 {{{
 # number of lines kept in history
-export HISTSIZE=10000
+export HISTSIZE=1000000
 # number of lines saved in the history after logout
-export SAVEHIST=10000
+export SAVEHIST=1000000
 # location of history
 export HISTFILE=$HOME/.zsh_history
+export HISTCONTROL=ignoreboth
+export HISTIGNORE="pwd:ls:ll:open:bg:fg:exit"
+
+# PROMPT_COMMAND="history -a; $PROMPT_COMMAND
 
 export PATH=$PATH:$HOME/bin
 export EDITOR=vim
@@ -624,6 +629,8 @@ typeset -U PATH
 hash -d wiki="/Users/pity/Documents/vimwiki"
 hash -d res="/Users/pity/Repo/latex/Templates/Resume"
 hash -d py="/Users/pity/Repo/python"
+hash -d flask="/Users/pity/Repo/python/flask"
 hash -d pub="/Users/pity/Repo/pub"
+hash -d spark="/Users/pity/Repo/cc/cbu/spark"
 hash -d blog="/Users/pity/Repo/octopress"
 hash -d book="/Users/pity/Dropbox/EBooks"
