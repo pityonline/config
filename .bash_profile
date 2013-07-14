@@ -2,8 +2,12 @@
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+#function _update_ps1() {
+#   export PS1="$(~/powerline-bash.py $?)"
+#   }
+#   export PROMPT_COMMAND="_update_ps1"
 
-export PS1='\e[01;31m\A \e[00m\e[01;32m\w\e[00m\$ ' 
+# export PS1='\e[01;31m\A \e[00m\e[01;32m\w\e[00m\$ ' 
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
@@ -23,7 +27,8 @@ export HISTIGNORE="[   ]*:&:bg:fg:exit:cd:ls:open"
 export HISTFILESIZE=1000000
 # 保存历史命令条数
 export HISTSIZE=1000000
-
+# 显示命令执行时间
+export HISTTIMEFORMAT='%F %T '
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -37,8 +42,9 @@ xterm*|rxvt*|Terminal*)
     ;;
 esac
 # make mac os x colorful in terminal
+# export TERM=xterm-256color
 export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+# export LSCOLORS=ExFxBxDxCxegedabagacad
 source "`brew --prefix grc`/etc/grc.bashrc"
 
 # enable color support of ls and also add handy aliases
@@ -46,7 +52,11 @@ source "`brew --prefix grc`/etc/grc.bashrc"
 #     eval "`dircolors -b`"
 #     alias ls='ls --color=auto'
 # fi
-
+if [ "$TERM" != "dumb" ]; then
+    export LS_OPTIONS='-G'
+    test -r ~/.dir_colors && eval "$(gdircolors -b ~/.dir_colors)" || eval "$(gdircolors -b)"
+    eval `gdircolors ~/.dir_colors`
+fi
 # make Vim as the default editor.
 export EDITOR=/usr/bin/vim
 
@@ -66,12 +76,15 @@ export LC_ALL=en_US.UTF-8
 # Paths
 # export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/Cellar/ruby/1.9.3-p362/bin:$PATH
+# export PATH=/usr/local/Cellar/ruby/1.9.3-p362/bin:$PATH
 export PATH=~/Repo/android-sdk/tools:$PATH
 export PATH=~/Repo/android-sdk/platform-tools:$PATH
+export PATH=/Users/pity/.rvm/gems/ruby-1.9.3-p194/gems:$PATH
+PATH=$PATH:$HOME/.rvm/bin
+source /Users/pity/.rvm/scripts/rvm
 
 # Git completion
-source /usr/local/Cellar/git/1.8.0/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-completion.bash
 
 # Alias
 source $HOME/.alias
