@@ -79,9 +79,9 @@ export PATH=/usr/local/bin:$PATH
 # export PATH=/usr/local/Cellar/ruby/1.9.3-p362/bin:$PATH
 export PATH=~/Repo/android-sdk/tools:$PATH
 export PATH=~/Repo/android-sdk/platform-tools:$PATH
-export PATH=/Users/pity/.rvm/gems/ruby-1.9.3-p194/gems:$PATH
-PATH=$PATH:$HOME/.rvm/bin
-source /Users/pity/.rvm/scripts/rvm
+# export PATH=/Users/pity/.rvm/gems/ruby-1.9.3-p194/gems:$PATH
+# PATH=$PATH:$HOME/.rvm/bin
+# source /Users/pity/.rvm/scripts/rvm
 
 # Git completion
 source /usr/local/etc/bash_completion.d/git-completion.bash

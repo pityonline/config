@@ -634,3 +634,8 @@ hash -d pub="/Users/pity/Repo/pub"
 hash -d spark="/Users/pity/Repo/cc/cbu/spark"
 hash -d blog="/Users/pity/Repo/octopress"
 hash -d book="/Users/pity/Dropbox/EBooks"
+
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# source /Users/pity/.rvm/scripts/rvm
+
+# PATH=$PATH:/usr/local/mysql/bin
