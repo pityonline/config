@@ -25,6 +25,9 @@ nm <leader>w :w!<cr>
 " Set jj to <ESC>
 ino jk <ESC>
 
+" Set te to :tabe
+nn te :tabe<Enter>
+
 " Map Q to gq
 map Q gq
 
@@ -54,7 +57,7 @@ se gfn=Menlo\ for\ Powerline:h17   " gfn = guifont
 se nu  " nu = number
 
 " Show relative numbers
-se rnu  " rnu = relative number
+" se rnu  " rnu = relative number
 
 " Show commands
 se sc  " sc = show commands
@@ -353,6 +356,7 @@ Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'Syntastic'
 Bundle 'Jinja'
 Bundle 'surround.vim'
+Bundle 'TimothyYe/vim-tips'
 " Bundle 'Pydiction'
 Bundle 'snipMate'
 
