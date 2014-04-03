@@ -79,6 +79,7 @@ export PATH=/usr/local/bin:$PATH
 # export PATH=/usr/local/Cellar/ruby/1.9.3-p362/bin:$PATH
 export PATH=~/Repo/android-sdk/tools:$PATH
 export PATH=~/Repo/android-sdk/platform-tools:$PATH
+export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
 # export PATH=/Users/pity/.rvm/gems/ruby-1.9.3-p194/gems:$PATH
 # PATH=$PATH:$HOME/.rvm/bin
 # source /Users/pity/.rvm/scripts/rvm
