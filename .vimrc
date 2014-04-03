@@ -7,7 +7,7 @@ se nocp    " nocp = no compatible
 
 " Encodings
 se enc=utf-8   " enc = encoding
-se fencs=ucs-bom,utf-8,cp936,gb18030,big5,latin1    " fenc = fileencodings
+se fencs=ucs-bom,utf-8,cp936,gb18030,big5,latin1    " fencs = fileencodings
 
 " With a map leader it's possible to do extra key combinations
 let mapleader = ","
@@ -28,11 +28,14 @@ ino jk <ESC>
 " Set te to :tabe
 nn te :tabe<Enter>
 
+" yy copy to system clipboard
+se cb=unnamed " cb = clipboard
+
 " Map Q to gq
 map Q gq
 
 " Set SPACE to toggle folding
-nn <Space> za
+nn <Space> <C-f>
 
 " Set paste toggle key
 se pt=<F10>  " pt = pastetoggle
@@ -139,6 +142,7 @@ iab idate <c-r>=strftime("%Y-%m-%d")<CR>
 iab itime <c-r>=strftime("%H:%M")<CR>
 iab imail pityonline <pityonline@gmail.com>
 iab igmail pityonline@gmail.com
+iab idrop >/dev/null 2>&1
 iab """" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 iab #### #############################################################################
 iab ==== =============================================================================
