@@ -152,21 +152,21 @@ iab **** ***********************************************************************
 " Windows Management
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nm wn <C-w>n
-nm wv <C-w>v
-nm wh <C-w>h
-nm wj <C-w>j
-nm wk <C-w>k
-nm wl <C-w>l
-nm wt <C-w>t
-nm wb <C-w>b
-nm wx <C-w>x
-nm wH <C-w>H
-nm wJ <C-w>J
-nm wK <C-w>K
-nm wL <C-w>L
-nm wc <C-w>c<cr>
-nm wo :vne<cr>
+nm wn <C-w>n      " new split window vertical
+nm wv <C-w>v      " copy horizontal
+nm wh <C-w>h      " mv left
+nm wj <C-w>j      " mv down
+nm wk <C-w>k      " mv up
+nm wl <C-w>l      " mv right
+nm wt <C-w>t      " mv top
+nm wb <C-w>b      " mv bottom
+nm wx <C-w>x      " exchange
+nm wH <C-w>H      " turn vertical to horizontal then mv left
+nm wJ <C-w>J      " turn horizontal to vertical then mv down
+nm wK <C-w>K      " turn horizontal to vertical then mv up
+nm wL <C-w>L      " turn vertical to horizontal then mv right
+nm wc <C-w>c<cr>  " close window
+nm wo :vne<cr>    " new split window horizontal
 
 " 用c-j,k在buffer之间切换
 nn <C-J> :bn<cr>
