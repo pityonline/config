@@ -363,5 +363,6 @@ Bundle 'surround.vim'
 Bundle 'TimothyYe/vim-tips'
 " Bundle 'Pydiction'
 Bundle 'snipMate'
+Bundle 'jnwhiteh/vim-golang'
 
 filetype plugin indent on   " REQUIRED!
