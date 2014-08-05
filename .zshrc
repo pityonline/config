@@ -622,6 +622,7 @@ export LC_ALL=en_US.UTF-8
 
 source $HOME/.oh-my-zsh/lib/git.zsh
 source $HOME/.oh-my-zsh/custom/pityonline.zsh-theme
+# ZSH_THEME="solarized-powerline"
 
 typeset -U PATH
 
