@@ -3,10 +3,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " No compatible
-se nocp    " nocp = no compatible
+se nocp                 " nocp = no compatible
 
 " Encodings
-se enc=utf-8   " enc = encoding
+se enc=utf-8            " enc = encoding
+se tenc=utf-8           " tenc = termencoding
+se fenc=utf-8           " fenc =filencoding
 se fencs=ucs-bom,utf-8,cp936,gb18030,big5,latin1    " fencs = fileencodings
 
 " With a map leader it's possible to do extra key combinations
@@ -15,21 +17,21 @@ let g:mapleader = ","
 
 " When .vimrc is edited, reload it
 au! bufwritepost .vimrc source ~/.vimrc
-au! bufwritepost .vimrc call Pl#Load() " REQUIRED! 必须写在此，必须加叹号，否则 Powerline 在保存文件时会丢失颜色。
+au! bufwritepost .vimrc call Pl#Load()  " REQUIRED! 必须写在此，必须加叹号，否则 Powerline 在保存文件时会丢失颜色。
 
 " Fast editing .vimrc
 nm <leader>e :e ~/.vimrc<cr>
 " Fast saving
 nm <leader>w :w!<cr>
 
-" Set jj to <ESC>
+" Set to <ESC>
 ino jk <ESC>
 
 " Set te to :tabe
 nn te :tabe<Enter>
 
 " yy copy to system clipboard
-se cb=unnamed " cb = clipboard
+se cb=unnamed           " cb = clipboard
 
 " Map Q to gq
 map Q gq
@@ -38,13 +40,13 @@ map Q gq
 nn <Space> <C-f>
 
 " Set paste toggle key
-se pt=<F10>  " pt = pastetoggle
+se pt=<F10>             " pt = pastetoggle
 
 " Auto change to current directory
-se acd " acd = autochdir
+se acd                  " acd = autochdir
 
 " Chinese help language
-se hlg=cn   "hlg = helplang
+se hlg=cn               " hlg = helplang
 
 filetype plugin indent on   " REQUIRED!
 
@@ -53,17 +55,17 @@ filetype plugin indent on   " REQUIRED!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set font for Gui/MacVim
-se gfn=Menlo\ for\ Powerline:h17   " gfn = guifont
-" se gfn=Inconsolata-dz\ for\ Powerline:h16   " gfn = guifont
+se gfn=Menlo\ for\ Powerline:h15    " gfn = guifont
+" se gfn=Inconsolata-dz\ for\ Powerline:h16
 
 " Show line numbers
-se nu  " nu = number
+se nu                   " nu = number
 
 " Show relative numbers
-" se rnu  " rnu = relative number
+" se rnu                " rnu = relative number
 
 " Show commands
-se sc  " sc = show commands
+se sc                   " sc = show commands
 
 " Show magic
 se magic
@@ -72,19 +74,19 @@ se magic
 se title
 
 " Show ruler
-se ru  " ru = ruler
+se ru                   " ru = ruler
 
 " Show mode
-se smd " smd = show mode
+se smd                  " smd = show mode
 
-se wmnu    " wmnu = wildmenu
+se wmnu                 " wmnu = wildmenu
 
-se bs=eol,start,indent " bs = backspace
+se bs=eol,start,indent  " bs = backspace
 
 " Change the status line color
 " http://vim.wikia.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
 " Always show status bar
-se ls=2  " ls is laststatus
+se ls=2                 " ls is laststatus
 
 " The following lines in vimrc will display the time of day and calender date on the editor status line
 " http://vim.wikia.com/wiki/Display_date-and-time_on_status_line
@@ -95,10 +97,10 @@ se ls=2  " ls is laststatus
 " se stl=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Highlight searching
-se hls " hls = hlsearch
+se hls                  " hls = hlsearch
 
 " Increase searching
-se is  " is = incsearch
+se is                   " is = incsearch
 
 " Show blank symbols when :se list
 se lcs=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
@@ -111,21 +113,21 @@ map <silent> <leader><cr> :noh<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " 自动缩进
-se ai  " ai = autoindent
+se ai                   " ai = autoindent
 " 智能缩进
-se si  " si = smartindent
+se si                   " si = smartindent
 " C/C++ 风格缩进
-se cin " cin = cindent
+se cin                  " cin = cindent
 
-" 默认使用 2 空格缩进
-se et      " expandtab
-se sta     " smarttab
-se sw=2    " shiftwidth
-se ts=2    " tabstop
-se sts=2   " softtabstop
+" 默认使用 4 空格缩进
+se et                   " expandtab
+se sta                  " smarttab
+se sw=4                 " shiftwidth
+se ts=4                 " tabstop
+se sts=4                " softtabstop
 
-" makefile 强制使用 4 空格缩进
-au FileType make set et sw=4 ts=4 sts=4
+" html 强制使用 4 空格缩进
+au FileType html set et sw=2 ts=2 sts=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax
@@ -152,21 +154,22 @@ iab **** ***********************************************************************
 " Windows Management
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nm wn <C-w>n      " new split window vertical
-nm wv <C-w>v      " copy horizontal
-nm wh <C-w>h      " mv left
-nm wj <C-w>j      " mv down
-nm wk <C-w>k      " mv up
-nm wl <C-w>l      " mv right
-nm wt <C-w>t      " mv top
-nm wb <C-w>b      " mv bottom
-nm wx <C-w>x      " exchange
-nm wH <C-w>H      " turn vertical to horizontal then mv left
-nm wJ <C-w>J      " turn horizontal to vertical then mv down
-nm wK <C-w>K      " turn horizontal to vertical then mv up
-nm wL <C-w>L      " turn vertical to horizontal then mv right
-nm wc <C-w>c<cr>  " close window
-nm wo :vne<cr>    " new split window horizontal
+nm wn <C-w>n            " new split window vertical
+nm wv <C-w>v            " copy horizontal
+nm wh <C-w>h            " mv left
+nm wj <C-w>j            " mv down
+nm wk <C-w>k            " mv up
+nm wl <C-w>l            " mv right
+nm wt <C-w>t            " mv top
+nm wb <C-w>b            " mv bottom
+nm wT <C-w>T            " mv out to tab
+nm wx <C-w>x            " exchange
+nm wH <C-w>H            " turn vertical to horizontal then mv left
+nm wJ <C-w>J            " turn horizontal to vertical then mv down
+nm wK <C-w>K            " turn horizontal to vertical then mv up
+nm wL <C-w>L            " turn vertical to horizontal then mv right
+nm wc <C-w>c<cr>        " close window
+nm wo :vne<cr>          " new split window horizontal
 
 " 用c-j,k在buffer之间切换
 nn <C-J> :bn<cr>
@@ -206,21 +209,21 @@ no <silent> <leader>x :VimwikiToggleListItem<cr>
 "\ 'path_html': '~/Documents/private/html/',
 "\ 'diary_link_count': 5}]
 
-let wiki                  = {}
-let wiki.path             = '~/Documents/vimwiki/'
-let wiki.path_html        = '~/Documents/vimwiki/html/'
-let wiki.template_path    = '~/Documents/templates/'
-let wiki.template_default = 'site'
-let wiki.template_ext     = '.html'
+let wiki                    = {}
+let wiki.path               = '~/Documents/vimwiki/'
+let wiki.path_html          = '~/Documents/vimwiki/html/'
+let wiki.template_path      = '~/Documents/templates/'
+let wiki.template_default   = 'site'
+let wiki.template_ext       = '.html'
 
-let private               = {}
-let private.path          = '~/Documents/private/'
-let private.path_html     = '~/Documents/private/html/'
-let wiki.template_path    = '~/Documents/templates/'
-let wiki.template_default = 'site'
-let wiki.template_ext     = '.html'
+let private                 = {}
+let private.path            = '~/Documents/private/'
+let private.path_html       = '~/Documents/private/html/'
+let wiki.template_path      = '~/Documents/templates/'
+let wiki.template_default   = 'site'
+let wiki.template_ext       = '.html'
 
-let g:vimwiki_list  = [wiki, private]
+let g:vimwiki_list          = [wiki, private]
 
 " 使用第三方工具把 markdown 转为 html。
 " \ 'custom_wiki2html': '/Users/pity/Repo/vimwiki_md2html/misaka_md2html.py',
@@ -278,11 +281,20 @@ let g:Powerline_cache_enabled = 0
 " au bufwritepost .vimrc call Pl#Load()  " REQUIRED! 这句必须写在 fast-saving 后面，写在这里不能生效。
 " au BufDelete * call Pl#Load()
 
+" VimIM
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" let g:vimim_toggle='wubi'
+" let g:vimim_wubi='jd'
+" let g:vimim_mode = 'dynamic'
+" let g:vimim_map='c-bslash'
+
 " Taglist
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nn <silent> <leader>t :TlistToggle<CR>
 let Tlist_Ctags_Cmd = '`which ctags`'
+" let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Use_Right_Window = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Auto_Open = 1
@@ -347,6 +359,8 @@ colo solarized
 " 格式3：非Github的Git仓库
 " Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 
+" Bundle 'VimIM'
+" Bundle 'Pydiction'
 Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'vimwiki'
@@ -361,7 +375,6 @@ Bundle 'Syntastic'
 Bundle 'Jinja'
 Bundle 'surround.vim'
 Bundle 'TimothyYe/vim-tips'
-" Bundle 'Pydiction'
 Bundle 'snipMate'
 Bundle 'jnwhiteh/vim-golang'
 
