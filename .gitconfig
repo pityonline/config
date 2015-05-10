@@ -70,3 +70,5 @@
   prompt  = false
 [merge]
   tool    = vimdiff
+# [init]
+  # templatedir = /Users/pity/git-hooks
