@@ -379,7 +379,7 @@ se t_Co=256 " REQUIRED!
 " Should set gfn for Powerline, it's already set in Interface.
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_theme = 'default'
-let g:Powerline_colorscheme = 'default'
+let g:Powerline_colorscheme = 'solarized256'
 let g:Powerline_cache_enabled = 0
 
 " Solve Powerline color-lost after save a file.
@@ -425,6 +425,11 @@ let g:syntastic_check_on_open=1
 
 " filetype plugin on
 " let g:pydiction_location = '$HOME/.vim/bundle/Pydiction/complete-dict'
+
+" PERLDOC2
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:Perldoc_path = '~/.perldoc/'
 
 " Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -482,5 +487,7 @@ Bundle 'surround.vim'
 Bundle 'TimothyYe/vim-tips'
 Bundle 'snipMate'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'Perldoc.vim'
+Bundle 'PERLDOC2'
 
 filetype plugin indent on   " REQUIRED!
