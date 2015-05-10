@@ -126,8 +126,10 @@ se sw=4                 " shiftwidth
 se ts=4                 " tabstop
 se sts=4                " softtabstop
 
-" html 强制使用 4 空格缩进
-au FileType html set et sw=2 ts=2 sts=2
+" use speicified indent on different filetypes " why setlocal?
+au FileType html se et sw=2 ts=2 sts=2
+au FileType yaml se et sw=2 ts=2 sts=2
+au BufEnter *.tmpl se et sw=2 ts=2 sts=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax
@@ -135,6 +137,9 @@ au FileType html set et sw=2 ts=2 sts=2
 
 syn enable
 syn on
+
+" use perl sytax highlight on Rexfile
+au BufRead,BufWrite *Rexfile se ft=perl
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Alias
