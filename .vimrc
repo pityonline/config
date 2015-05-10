@@ -317,11 +317,18 @@ let wiki.template_ext       = '.html'
 let private                 = {}
 let private.path            = '~/Documents/private/'
 let private.path_html       = '~/Documents/private/html/'
-let wiki.template_path      = '~/Documents/templates/'
-let wiki.template_default   = 'site'
-let wiki.template_ext       = '.html'
+let private.template_path      = '~/Documents/templates/'
+let private.template_default   = 'site'
+let private.template_ext       = '.html'
 
-let g:vimwiki_list          = [wiki, private]
+let work                    = {}
+let work.path               = '~/Documents/work/'
+let work.path_html          = '~/Documents/work/html/'
+let work.template_path      = '~/Documents/work/templates/'
+let work.template_default   = 'default'
+let work.template_ext       = '.tpl'
+
+let g:vimwiki_list          = [work, wiki, private]
 
 " 使用第三方工具把 markdown 转为 html。
 " \ 'custom_wiki2html': '/Users/pity/Repo/vimwiki_md2html/misaka_md2html.py',
