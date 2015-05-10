@@ -16,11 +16,11 @@ let mapleader = ","
 let g:mapleader = ","
 
 " When .vimrc is edited, reload it
-au! bufwritepost .vimrc source ~/.vimrc
+au! bufwritepost .vimrc source $MYVIMRC
 au! bufwritepost .vimrc call Pl#Load()  " REQUIRED! 必须写在此，必须加叹号，否则 Powerline 在保存文件时会丢失颜色。
 
 " Fast editing .vimrc
-nm <leader>e :e ~/.vimrc<cr>
+nm <leader>e :e $MYVIMRC<cr>
 " Fast saving
 nm <leader>w :w!<cr>
 
@@ -36,7 +36,7 @@ se cb=unnamed           " cb = clipboard
 " Map Q to gq
 map Q gq
 
-" Set SPACE to toggle folding
+" Set SPACE to scroll down
 nn <Space> <C-f>
 
 " Set paste toggle key
