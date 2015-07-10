@@ -177,8 +177,8 @@ nm wc <C-w>c<cr>        " close window
 nm wo :vne<cr>          " new split window horizontal
 
 " 用c-j,k在buffer之间切换
-nn <C-J> :bn<cr>
-nn <C-K> :bp<cr>
+" nn <C-J> :bn<cr>
+" nn <C-K> :bp<cr>
 
 " Set Up/Down non-linewise
 no <Up> gk
@@ -312,6 +312,10 @@ no <silent> <leader>x :VimwikiToggleListItem<cr>
 "\ 'path_html': '~/Documents/private/html/',
 "\ 'diary_link_count': 5}]
 
+" 使用第三方工具把 markdown 转为 html。
+" \ 'custom_wiki2html': '/Users/pity/Repo/vimwiki_md2html/misaka_md2html.py',
+" \ 'syntax': 'markdown',
+
 let wiki                    = {}
 let wiki.path               = '~/Documents/vimwiki/'
 let wiki.path_html          = '~/Documents/vimwiki/html/'
@@ -328,16 +332,14 @@ let private.template_ext       = '.html'
 
 let work                    = {}
 let work.path               = '~/Documents/work/'
-let work.path_html          = '~/Documents/work/html/'
-let work.template_path      = '~/Documents/work/templates/'
+let work.path_html          = 'html/'
+let work.template_path      = 'templates/'
 let work.template_default   = 'default'
 let work.template_ext       = '.tpl'
+let work.diary_rel_path     = './'
+let work.auto_export        = 0
 
 let g:vimwiki_list          = [work, wiki, private]
-
-" 使用第三方工具把 markdown 转为 html。
-" \ 'custom_wiki2html': '/Users/pity/Repo/vimwiki_md2html/misaka_md2html.py',
-" \ 'syntax': 'markdown',
 
 " 对中文用户来说，我们并不怎么需要驼峰英文成为维基词条
 let g:vimwiki_camel_case = 0
@@ -436,6 +438,11 @@ let g:syntastic_check_on_open=1
 
 let g:Perldoc_path = '~/.perldoc/'
 
+" easymotion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:EasyMotion_keys='asdghklqwertyuiopzxcvbnmfj'
+
 " Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -494,5 +501,6 @@ Bundle 'snipMate'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'Perldoc.vim'
 Bundle 'PERLDOC2'
+Bundle 'wmgraphviz'
 
 filetype plugin indent on   " REQUIRED!
