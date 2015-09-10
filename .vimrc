@@ -33,6 +33,12 @@ nn te :tabe<Enter>
 " yy copy to system clipboard
 se cb=unnamed           " cb = clipboard
 
+" Set auto-formating better for Chinese
+se fo+=mM               " fo = formatoptions
+
+" Set textwidth to 78 for text files
+au! bufNewFile,bufReadPost *.txt se tw=78   " tw = textwidth
+
 " Map Q to gq
 map Q gq
 
@@ -128,7 +134,7 @@ se sts=4                " softtabstop
 
 " use speicified indent on different filetypes " why setlocal?
 au FileType html se et sw=2 ts=2 sts=2
-au FileType yaml se et sw=2 ts=2 sts=2
+au FileType yaml,yml se et sw=2 ts=2 sts=2
 au BufEnter *.tmpl se et sw=2 ts=2 sts=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
