@@ -4,7 +4,7 @@
 #
 # vim:fdm=marker
 # Use zsh 5.0.0
-export PATH=/usr/local/bin:$PATH
+# export PATH=/usr/local/bin:$PATH
 
 # 预配置 {{{
 # 如果不是交互shell就直接结束 (unix power tool, 2.11)
@@ -539,7 +539,6 @@ export HISTIGNORE="pwd:ls:ll:open:bg:fg:exit"
 
 # PROMPT_COMMAND="history -a; $PROMPT_COMMAND
 
-export PATH=$PATH:$HOME/bin
 export EDITOR=vim
 export VISUAL=vim
 export SUDO_PROMPT=$'[\e[31;5msudo\e[m] password for \e[33;1m%p\e[m: '
@@ -627,16 +626,10 @@ source $HOME/.oh-my-zsh/custom/pityonline.zsh-theme
 typeset -U PATH
 
 #paths alias
-hash -d wiki="/Users/pity/Documents/vimwiki"
-hash -d res="/Users/pity/Repo/latex/Templates/Resume"
-hash -d py="/Users/pity/Repo/python"
-hash -d flask="/Users/pity/Repo/python/flask"
-hash -d pub="/Users/pity/Repo/pub"
-hash -d spark="/Users/pity/Repo/cc/cbu/spark"
-hash -d blog="/Users/pity/Repo/octopress"
-hash -d book="/Users/pity/Dropbox/EBooks"
+hash -d wiki="$HOME/Documents/vimwiki"
+hash -d work="$HOME/Documents/work"
+hash -d rime="$HOME/Library/Rime"
+hash -d perl="$HOME/repo/pity/perl"
 
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-# source /Users/pity/.rvm/scripts/rvm
-
-# PATH=$PATH:/usr/local/mysql/bin
+export PATH="$HOME/.plenv/bin:$PATH"
+eval "$(plenv init -)"
