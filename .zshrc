@@ -621,7 +621,7 @@ export LC_ALL=en_US.UTF-8
 
 source $HOME/.oh-my-zsh/lib/git.zsh
 source $HOME/.oh-my-zsh/custom/pityonline.zsh-theme
-# ZSH_THEME="solarized-powerline"
+ZSH_THEME="solarized-powerline"
 
 typeset -U PATH
 
@@ -631,5 +631,6 @@ hash -d work="$HOME/Documents/work"
 hash -d rime="$HOME/Library/Rime"
 hash -d perl="$HOME/repo/pity/perl"
 
-export PATH="$HOME/.plenv/bin:$PATH"
+# export PATH="$HOME/.plenv/bin:$PATH"
 eval "$(plenv init -)"
+eval "$(hub alias -s)"

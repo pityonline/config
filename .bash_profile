@@ -74,11 +74,13 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Paths
-export PATH=/usr/local/bin:$PATH
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+# export PATH="$HOME/.plenv/bin:$PATH"
+eval "$(plenv init -)"
 
 # Git completion
 source /usr/local/etc/bash_completion.d/git-completion.bash
 
 # Alias
 source $HOME/.alias
+eval "$(hub alias -s)"
