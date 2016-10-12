@@ -12,15 +12,17 @@
     ai      = add -i
     ap      = add -p
     b       = branch
+    ba      = branch -a
     bv      = branch -v
     bi      = bisect
     bl      = blame
     c       = commit
     ca      = commit -a
     cam     = commit --amend
+    ci      = commit
     cm      = commit -m
     cf      = config
-    cg      = config --global
+    cfg     = config --global
     cl      = clone
     co      = checkout
     cp      = cherry-pick
@@ -60,8 +62,9 @@
 [github]
     user    = pityonline
 [core]
-    excludesfile  = /Users/pity/.gitignore_global
-    quotepath     = false
+    excludesfile  = ~/.gitignore_global
+    quotepath     = false       # status 显示中文
+    editor = /usr/local/bin/vim # commit 语法高亮
 [push]
     default = simple
 [diff]
@@ -71,4 +74,6 @@
 [merge]
     tool    = vimdiff
 # [init]
-  # templatedir = /Users/pity/git-hooks
+  # templatedir = ~/git-hooks
+[http]
+    proxy =
