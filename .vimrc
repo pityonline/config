@@ -37,7 +37,7 @@ se cb=unnamed           " cb = clipboard
 se fo+=mM               " fo = formatoptions
 
 " Set textwidth to 78 for text files
-au! bufNewFile,bufReadPost *.txt se tw=78   " tw = textwidth
+" au! bufNewFile,bufReadPost *.txt se tw=78   " tw = textwidth
 
 " Map Q to gq
 map Q gq
@@ -61,14 +61,10 @@ filetype plugin indent on   " REQUIRED!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set font for Gui/MacVim
-se gfn=Menlo\ for\ Powerline:h15    " gfn = guifont
-" se gfn=Inconsolata-dz\ for\ Powerline:h16
+se gfn=Menlo\ for\ Powerline:h14    " gfn = guifont
 
 " Show line numbers
 se nu                   " nu = number
-
-" Show relative numbers
-" se rnu                " rnu = relative number
 
 " Show commands
 se sc                   " sc = show commands
@@ -84,7 +80,6 @@ se ru                   " ru = ruler
 
 " Show mode
 se smd                  " smd = show mode
-
 se wmnu                 " wmnu = wildmenu
 
 se bs=eol,start,indent  " bs = backspace
@@ -93,6 +88,9 @@ se bs=eol,start,indent  " bs = backspace
 " http://vim.wikia.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
 " Always show status bar
 se ls=2                 " ls is laststatus
+
+" 显示十六进制字符
+:set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 
 " The following lines in vimrc will display the time of day and calender date on the editor status line
 " http://vim.wikia.com/wiki/Display_date-and-time_on_status_line
@@ -104,9 +102,12 @@ se ls=2                 " ls is laststatus
 
 " Highlight searching
 se hls                  " hls = hlsearch
-
+hi Visual  guifg=#000000 guibg=#FFFFFF gui=none
 " Increase searching
 se is                   " is = incsearch
+" Search show next match string at the center of screen
+nn n nzz
+nn N Nzz
 
 " Show blank symbols when :se list
 se lcs=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
@@ -114,8 +115,10 @@ se lcs=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
+se aw	                " autowrite
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Indent
+" Indent & filetypes
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " 自动缩进
@@ -133,9 +136,30 @@ se ts=4                 " tabstop
 se sts=4                " softtabstop
 
 " use speicified indent on different filetypes " why setlocal?
-au FileType html se et sw=2 ts=2 sts=2
-au FileType yaml,yml se et sw=2 ts=2 sts=2
-au BufEnter *.tmpl se et sw=2 ts=2 sts=2
+au FileType ruby        se et sw=2 ts=2 sts=2
+au FileType html        se et sw=2 ts=2 sts=2
+au FileType yaml,yml    se et sw=2 ts=2 sts=2
+au BufEnter *.tmpl      se et sw=2 ts=2 sts=2
+
+" do not expand tab in Makefiles
+au FileType make,go             se noet
+
+" fix crontab: temp file must be edited in place
+autocmd Filetype crontab        setlocal nobackup nowritebackup
+autocmd Filetype gitcommit      se spell textwidth=72
+
+" use perl sytax highlight on Rexfile
+au BufRead,BufWrite *Rexfile    se ft=perl
+
+" Mermaid auto compile
+" au BufEnter *.mmd,*.mermaid set Filetype mermaid bufwritepost !mermaid -p %
+augroup mermaid
+    " autocmd!	" Remove all vimrc autocommands
+    au BufNewFile,BufRead *.mmd,*.mermaid se ft=mermaid
+    au BufWritePost %!mermaid -p
+augroup END
+
+nm <leader>m :!mermaid -p %<Enter>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax
@@ -143,9 +167,6 @@ au BufEnter *.tmpl se et sw=2 ts=2 sts=2
 
 syn enable
 syn on
-
-" use perl sytax highlight on Rexfile
-au BufRead,BufWrite *Rexfile se ft=perl
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Alias
@@ -156,40 +177,35 @@ iab itime <c-r>=strftime("%H:%M")<CR>
 iab imail pityonline <pityonline@gmail.com>
 iab igmail pityonline@gmail.com
 iab idrop >/dev/null 2>&1
-iab """" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-iab #### #############################################################################
-iab ==== =============================================================================
-iab **** *****************************************************************************
+iab """"" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+iab ##### #############################################################################
+iab ===== =============================================================================
+iab ***** *****************************************************************************
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Windows Management
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nm wn <C-w>n            " new split window vertical
-nm wv <C-w>v            " copy horizontal
-nm wh <C-w>h            " mv left
-nm wj <C-w>j            " mv down
-nm wk <C-w>k            " mv up
-nm wl <C-w>l            " mv right
-nm wt <C-w>t            " mv top
-nm wb <C-w>b            " mv bottom
-nm wT <C-w>T            " mv out to tab
-nm wx <C-w>x            " exchange
-nm wH <C-w>H            " turn vertical to horizontal then mv left
-nm wJ <C-w>J            " turn horizontal to vertical then mv down
-nm wK <C-w>K            " turn horizontal to vertical then mv up
-nm wL <C-w>L            " turn vertical to horizontal then mv right
-nm wc <C-w>c<cr>        " close window
-nm wo :vne<cr>          " new split window horizontal
-
-" 用c-j,k在buffer之间切换
-" nn <C-J> :bn<cr>
-" nn <C-K> :bp<cr>
+nn wn <C-w>n            " new split window vertical
+nn wv <C-w>v            " copy horizontal
+nn wh <C-w>h            " mv left
+nn wj <C-w>j            " mv down
+nn wk <C-w>k            " mv up
+nn wl <C-w>l            " mv right
+nn wt <C-w>t            " mv top
+nn wb <C-w>b            " mv bottom
+nn wT <C-w>T            " mv out to tab
+nn wx <C-w>x            " exchange
+nn wH <C-w>H            " turn vertical to horizontal then mv left
+nn wJ <C-w>J            " turn horizontal to vertical then mv down
+nn wK <C-w>K            " turn horizontal to vertical then mv up
+nn wL <C-w>L            " turn vertical to horizontal then mv right
+nn wc <C-w>c<cr>        " close window
+nn wo :vne<cr>          " new split window horizontal
 
 " Set Up/Down non-linewise
 no <Up> gk
 no <Down> gj
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
@@ -322,54 +338,54 @@ no <silent> <leader>x :VimwikiToggleListItem<cr>
 " \ 'custom_wiki2html': '/Users/pity/Repo/vimwiki_md2html/misaka_md2html.py',
 " \ 'syntax': 'markdown',
 
-let wiki                    = {}
-let wiki.path               = '~/Documents/vimwiki/'
-let wiki.path_html          = '~/Documents/vimwiki/html/'
-let wiki.template_path      = '~/Documents/templates/'
-let wiki.template_default   = 'site'
-let wiki.template_ext       = '.html'
+let wiki                          = {}
+let wiki.path                     = '~/Documents/vimwiki/'
+let wiki.path_html                = '~/Documents/vimwiki/html/'
+let wiki.template_path            = '~/Documents/templates/'
+let wiki.template_default         = 'site'
+let wiki.template_ext             = '.html'
 
-let private                 = {}
-let private.path            = '~/Documents/private/'
-let private.path_html       = '~/Documents/private/html/'
-let private.template_path      = '~/Documents/templates/'
-let private.template_default   = 'site'
-let private.template_ext       = '.html'
+let private                       = {}
+let private.path                  = '~/Documents/private/'
+let private.path_html             = '~/Documents/private/html/'
+let private.template_path         = '~/Documents/templates/'
+let private.template_default      = 'site'
+let private.template_ext          = '.html'
 
-let work                    = {}
-let work.path               = '~/Documents/work/'
-let work.path_html          = 'html/'
-let work.template_path      = 'templates/'
-let work.template_default   = 'default'
-let work.template_ext       = '.tpl'
-let work.diary_rel_path     = './'
-let work.auto_export        = 0
+let work                          = {}
+let work.path                     = '~/Documents/work/'
+let work.path_html                = 'html/'
+let work.template_path            = 'templates/'
+let work.template_default         = 'default'
+let work.template_ext             = '.tpl'
+let work.diary_rel_path           = './'
+let work.auto_export              = 0
 
-let g:vimwiki_list          = [work, wiki, private]
+let g:vimwiki_list                = [wiki, work, private]
 
 " 对中文用户来说，我们并不怎么需要驼峰英文成为维基词条
-let g:vimwiki_camel_case = 0
- 
+let g:vimwiki_camel_case          = 0
+
 " 标记为完成的 checklist 项目会有特别的颜色
-let g:vimwiki_hl_cb_checked = 1
- 
+let g:vimwiki_hl_cb_checked       = 1
+
 " 我的 vim 是没有菜单的，加一个 vimwiki 菜单项也没有意义
-let g:vimwiki_menu = ''
- 
+let g:vimwiki_menu                = ''
+
 " 是否开启按语法折叠  会让文件比较慢
 " let g:vimwiki_folding = 1
- 
+
 " 是否在计算字串长度时用特别考虑中文字符
-let g:vimwiki_CJK_length = 1
+let g:vimwiki_CJK_length          = 1
 
 " 是否去掉换行
 let g:vimwiki_list_ignore_newline = 0
 
 " 在 vimwiki 里使用的 html 标签列表，以逗号分隔
-let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1'
+let g:vimwiki_valid_html_tags     = 'b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1'
 
 " 对设置了的文件类型不进行扩展
-let g:vimwiki_file_exts = 'c, cpp, wav, txt, h, hpp, zip, sh, awk, ps, pdf'
+let g:vimwiki_file_exts           = 'c, cpp, wav, txt, h, hpp, zip, sh, awk, ps, pdf'
 
 " Calendar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -390,9 +406,9 @@ se t_Co=256 " REQUIRED!
 
 " Choose theme
 " Should set gfn for Powerline, it's already set in Interface.
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_theme = 'default'
-let g:Powerline_colorscheme = 'solarized256'
+let g:Powerline_symbols       = 'fancy'
+let g:Powerline_theme         = 'default'
+let g:Powerline_colorscheme   = 'solarized256'
 let g:Powerline_cache_enabled = 0
 
 " Solve Powerline color-lost after save a file.
@@ -402,111 +418,232 @@ let g:Powerline_cache_enabled = 0
 " VimIM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" let g:vimim_toggle='wubi'
-" let g:vimim_wubi='jd'
-" let g:vimim_mode = 'dynamic'
-" let g:vimim_map='c-bslash'
+let g:Vimim_toggle = 'wubi'
+let g:Vimim_wubi   = 'jd'
+let g:Vimim_mode   = 'dynamic'
+let g:Vimim_map    = 'c-bslash'
 
 " Taglist
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nn <silent> <leader>t :TlistToggle<CR>
-let Tlist_Ctags_Cmd = '`which ctags`'
-" let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-let Tlist_Use_Right_Window = 1
-let Tlist_File_Fold_Auto_Close = 1
-let Tlist_Auto_Open = 1
-let Tlist_Show_One_File = 1
+" nn <silent> <leader>t :TlistToggle<CR>
+let Tlist_Ctags_Cmd               = '`which ctags`'
+let Tlist_Use_Right_Window        = 1
+let Tlist_File_Fold_Auto_Close    = 1
+let Tlist_Auto_Open               = 1
+let Tlist_Show_One_File           = 1
 let Tlist_GainFocus_On_ToggleOpen = 0
-let Tlist_Exit_OnlyWindow = 1
-" let g:winManagerWindowLayout=’FileExplorer’
+let Tlist_Exit_OnlyWindow         = 1
 
 " update tags faster in insert mode
 au CursorMovedI * silent! TlistHighlightTag
 
 " vimwiki toc support
-let Tlist_Vimwiki_Settings = 'wiki;h:Headers'
+let Tlist_Vimwiki_Settings        = 'wiki;h:Headers'
 
 " Syntastic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " 打开文件时检查
-let g:syntastic_check_on_open=1
-
-" Pydiction
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" filetype plugin on
-" let g:pydiction_location = '$HOME/.vim/bundle/Pydiction/complete-dict'
-
-" PERLDOC2
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:Perldoc_path = '~/.perldoc/'
+let g:syntastic_check_on_open      = 1
+let g:syntastic_sh_shellcheck_args = "-e SC2029 -e SC2086 -e SC2162 -e SC2164 -e SC1117 -e SC2103"
 
 " easymotion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:EasyMotion_keys='asdghklqwertyuiopzxcvbnmfj'
+let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj'
+
+" SQL Server format
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:sqlutil_keyword_case   = '\U'
+let g:sqlutil_cmd_terminator = "\ngo"
+
+" previm
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:previm_open_cmd = 'open -a Safari'
+
+" vim-go
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:go_fmt_autosave                = 1
+let g:go_fmt_command                 = "goimports"
+let g:go_test_timeout                = '10s'	" default to 10 seconds
+
+" highlight
+let g:go_highlight_types             = 1
+let g:go_highlight_fields            = 1
+let g:go_highlight_functions         = 1
+let g:go_highlight_methods           = 1
+let g:go_highlight_operators         = 1
+let g:go_highlight_extra_types       = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags     = 1
+
+" metalinter
+let g:go_metalinter_enabled          = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave         = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_autosave_enabled = ['golint']
+let g:go_metalinter_deadline         = "5s"
+
+let g:go_auto_type_info              = 1
+let g:go_auto_sameids                = 1
+
+autocmd FileType go nmap <leader>B  <Plug>(go-build)
+autocmd FileType go nmap <leader>R  <Plug>(go-run)
+autocmd FileType go nmap <leader>T  <Plug>(go-test)
+autocmd FileType go nmap <Leader>C  <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <Leader>i	<Plug>(go-info)
+
+autocmd Filetype go command! -bang A  call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+" tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nn <silent> <leader>t :TagbarToggle<CR>
+" au VimEnter * nested :TagbarOpen
+
+" gotags
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
+
+" vim-easy-align
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" mkdx.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" :h mkdx-var-map-prefix
+let g:mkdx#map_prefix = '\'
+
+" :h mkdx-var-map-keys
+let g:mkdx#map_keys = 1
+
+" :h mkdx-var-checkbox-toggles
+let g:mkdx#checkbox_toggles = [' ', '-', 'x']
+
+" :h mkdx-var-checklist-update-tree
+let g:mkdx#checklist_update_tree = 2
+
+" :h mkdx-var-restore-visual
+let g:mkdx#restore_visual = 1
+
+" :h mkdx-var-header-style
+let g:mkdx#header_style = '#'
+
+" :h mkdx-var-table-header-divider
+let g:mkdx#table_header_divider = '-'
+
+" :h mkdx-var-table-divider
+let g:mkdx#table_divider = '|'
+
+" :h mkdx-var-enhance-enter
+let g:mkdx#enhance_enter = 1
+
+" :h mkdx-var-list-tokens
+let g:mkdx#list_tokens = ['-', '*', '>']
+
+" :h mkdx-var-fence-style
+let g:mkdx#fence_style = ''
+
+" :h mkdx-var-toc-text
+let g:mkdx#toc_text = 'TOC'
+
+" :h mkdx-var-toc-list-token
+let g:mkdx#toc_list_token = '-'
+
+" :h mkdx-var-link-as-img-pat
+let g:mkdx#link_as_img_pat = 'a\?png\|jpe\?g\|gif'
 
 " Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 no <silent> <leader>b :BundleInstall<cr>
 
-" set nocompatible    " be iMproved
-filetype off    " REQUIRED!
-se rtp+=~/.vim/bundle/vundle/   " rtp = runtimepath
+filetype off            " REQUIRED!
+se rtp+=~/.vim/bundle/Vundle.vim/   " rtp = runtimepath
 call vundle#rc()
 
 " 使用Vundle来管理Vundle，这个必须要有。
 Bundle 'gmarik/vundle'
 
-" Colors
-
-Bundle 'desert256.vim'
-Bundle 'colorful256.vim'
-Bundle 'darkburn'
-Bundle '256-jungle'
-Bundle 'Lucius'
-Bundle 'lilydjwg_dark'
-Bundle 'wombat256.vim'
 Bundle 'altercation/vim-colors-solarized'
-" colo wombat256mod
 
 se bg=dark  " bg = background
 let g:solarized_termcolors=256
+let g:solarized_hitrail=1       " 未生效
 colo solarized
 
-" Bundle 安装格式
-" 格式1：Github上其他用户的仓库（非vim-scripts账户里的仓库，所以要加Github用户名）
-" Bundle 'tpope/vim-rails.git'
-" 格式2：vim-scripts里面的仓库，直接打仓库名即可。
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
-" 格式3：非Github的Git仓库
-" Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
-
-" Bundle 'VimIM'
-" Bundle 'Pydiction'
+Bundle 'VundleVim/Vundle.vim'
+Bundle 'VimIM'
 Bundle 'The-NERD-tree'
-Bundle 'taglist.vim'
+Bundle 'tagbar'
 Bundle 'vimwiki'
 Bundle 'renamer.vim'
 Bundle 'mattn/calendar-vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
+Bundle 'junegunn/gv.vim'
 Bundle 'tpope/vim-markdown'
-Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+Bundle 'jlanzarotta/bufexplorer'
 Bundle 'Syntastic'
-Bundle 'Jinja'
-Bundle 'surround.vim'
-Bundle 'TimothyYe/vim-tips'
-Bundle 'snipMate'
-Bundle 'jnwhiteh/vim-golang'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 Bundle 'Perldoc.vim'
-Bundle 'PERLDOC2'
-Bundle 'wmgraphviz'
+Bundle 'wikipedia.vim'
+Bundle 'SQLUtilities'
+Bundle 'dbext.vim'
+Bundle 'kannokanno/previm'
+Bundle 'fatih/vim-go'
+Bundle 'pylint.vim'
+Bundle 'Windows-PowerShell-Syntax-Plugin'
+Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'editorconfig-vim'
+Bundle 'vim-flake8'
+Bundle 'junegunn/vim-easy-align'
+Bundle 'SidOfc/mkdx'
+Bundle 'eraserhd/vim-ios'
+Bundle 'cocoa.vim'
 
 filetype plugin indent on   " REQUIRED!
