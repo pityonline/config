@@ -415,14 +415,6 @@ let g:Powerline_cache_enabled = 0
 " au bufwritepost .vimrc call Pl#Load()  " REQUIRED! 这句必须写在 fast-saving 后面，写在这里不能生效。
 " au BufDelete * call Pl#Load()
 
-" VimIM
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:Vimim_toggle = 'wubi'
-let g:Vimim_wubi   = 'jd'
-let g:Vimim_mode   = 'dynamic'
-let g:Vimim_map    = 'c-bslash'
-
 " Taglist
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -611,7 +603,6 @@ let g:solarized_hitrail=1       " 未生效
 colo solarized
 
 Bundle 'VundleVim/Vundle.vim'
-Bundle 'VimIM'
 Bundle 'The-NERD-tree'
 Bundle 'tagbar'
 Bundle 'vimwiki'
