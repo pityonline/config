@@ -636,5 +636,6 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'SidOfc/mkdx'
 Bundle 'eraserhd/vim-ios'
 Bundle 'cocoa.vim'
+Plugin 'enricobacis/paste.vim'
 
 filetype plugin indent on   " REQUIRED!
