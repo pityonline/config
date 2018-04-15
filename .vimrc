@@ -636,5 +636,6 @@ Plugin 'SidOfc/mkdx'
 Plugin 'eraserhd/vim-ios'
 Plugin 'cocoa.vim'
 Plugin 'enricobacis/paste.vim'
+Plugin 'ack.vim'
 
 filetype plugin indent on   " REQUIRED!
