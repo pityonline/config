@@ -115,7 +115,7 @@ se lcs=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
-se aw	                " autowrite
+se aw                   " autowrite
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent & filetypes
@@ -154,7 +154,7 @@ au BufRead,BufWrite *Rexfile    se ft=perl
 " Mermaid auto compile
 " au BufEnter *.mmd,*.mermaid set Filetype mermaid bufwritepost !mermaid -p %
 augroup mermaid
-    " autocmd!	" Remove all vimrc autocommands
+    " autocmd!  " Remove all vimrc autocommands
     au BufNewFile,BufRead *.mmd,*.mermaid se ft=mermaid
     au BufWritePost %!mermaid -p
 augroup END
@@ -460,7 +460,7 @@ let g:previm_open_cmd = 'open -a Safari'
 
 let g:go_fmt_autosave                = 1
 let g:go_fmt_command                 = "goimports"
-let g:go_test_timeout                = '10s'	" default to 10 seconds
+let g:go_test_timeout                = '10s'    " default to 10 seconds
 
 " highlight
 let g:go_highlight_types             = 1
@@ -486,7 +486,7 @@ autocmd FileType go nmap <leader>B  <Plug>(go-build)
 autocmd FileType go nmap <leader>R  <Plug>(go-run)
 autocmd FileType go nmap <leader>T  <Plug>(go-test)
 autocmd FileType go nmap <Leader>C  <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <Leader>i	<Plug>(go-info)
+autocmd FileType go nmap <Leader>i  <Plug>(go-info)
 
 autocmd Filetype go command! -bang A  call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
@@ -502,31 +502,31 @@ nn <silent> <leader>t :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:tagbar_type_go = {
-	\ 'ctagstype' : 'go',
-	\ 'kinds'     : [
-		\ 'p:package',
-		\ 'i:imports:1',
-		\ 'c:constants',
-		\ 'v:variables',
-		\ 't:types',
-		\ 'n:interfaces',
-		\ 'w:fields',
-		\ 'e:embedded',
-		\ 'm:methods',
-		\ 'r:constructor',
-		\ 'f:functions'
-	\ ],
-	\ 'sro' : '.',
-	\ 'kind2scope' : {
-		\ 't' : 'ctype',
-		\ 'n' : 'ntype'
-	\ },
-	\ 'scope2kind' : {
-		\ 'ctype' : 't',
-		\ 'ntype' : 'n'
-	\ },
-	\ 'ctagsbin'  : 'gotags',
-	\ 'ctagsargs' : '-sort -silent'
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
 \ }
 
 " vim-easy-align
