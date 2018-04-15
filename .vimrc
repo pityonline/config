@@ -583,59 +583,58 @@ let g:mkdx#toc_list_token = '-'
 " :h mkdx-var-link-as-img-pat
 let g:mkdx#link_as_img_pat = 'a\?png\|jpe\?g\|gif'
 
-" Vundle
+" Vundle.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-no <silent> <leader>b :BundleInstall<cr>
+no <silent> <leader>b :PluginInstall<cr>
 
 filetype off            " REQUIRED!
 se rtp+=~/.vim/bundle/Vundle.vim/   " rtp = runtimepath
 call vundle#rc()
 
-" 使用Vundle来管理Vundle，这个必须要有。
-Bundle 'gmarik/vundle'
+" 使用 Vundle 来管理 Vundle，这个必须要有。
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
 se bg=dark  " bg = background
 let g:solarized_termcolors=256
 let g:solarized_hitrail=1       " 未生效
 colo solarized
 
-Bundle 'VundleVim/Vundle.vim'
-Bundle 'The-NERD-tree'
-Bundle 'tagbar'
-Bundle 'vimwiki'
-Bundle 'renamer.vim'
-Bundle 'mattn/calendar-vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-fugitive'
-Bundle 'junegunn/gv.vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'jlanzarotta/bufexplorer'
-Bundle 'Syntastic'
+Plugin 'The-NERD-tree'
+Plugin 'tagbar'
+Plugin 'vimwiki'
+Plugin 'renamer.vim'
+Plugin 'mattn/calendar-vim'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/gv.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'Syntastic'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
-Bundle 'Perldoc.vim'
-Bundle 'wikipedia.vim'
-Bundle 'SQLUtilities'
-Bundle 'dbext.vim'
-Bundle 'kannokanno/previm'
-Bundle 'fatih/vim-go'
-Bundle 'pylint.vim'
-Bundle 'Windows-PowerShell-Syntax-Plugin'
-Bundle 'AndrewRadev/splitjoin.vim'
-Bundle 'SirVer/ultisnips'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'editorconfig-vim'
-Bundle 'vim-flake8'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'SidOfc/mkdx'
-Bundle 'eraserhd/vim-ios'
-Bundle 'cocoa.vim'
+Plugin 'Perldoc.vim'
+Plugin 'wikipedia.vim'
+Plugin 'SQLUtilities'
+Plugin 'dbext.vim'
+Plugin 'kannokanno/previm'
+Plugin 'fatih/vim-go'
+Plugin 'pylint.vim'
+Plugin 'Windows-PowerShell-Syntax-Plugin'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'editorconfig-vim'
+Plugin 'vim-flake8'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'SidOfc/mkdx'
+Plugin 'eraserhd/vim-ios'
+Plugin 'cocoa.vim'
 Plugin 'enricobacis/paste.vim'
 
 filetype plugin indent on   " REQUIRED!
