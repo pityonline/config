@@ -583,6 +583,11 @@ let g:mkdx#toc_list_token = '-'
 " :h mkdx-var-link-as-img-pat
 let g:mkdx#link_as_img_pat = 'a\?png\|jpe\?g\|gif'
 
+" LanguageTool
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:languagetool_jar='/usr/local/Cellar/languagetool/4.1/libexec/languagetool-commandline.jar'
+let g:languagetool_lang='en'
+
 " Vundle.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -637,5 +642,6 @@ Plugin 'eraserhd/vim-ios'
 Plugin 'cocoa.vim'
 Plugin 'enricobacis/paste.vim'
 Plugin 'ack.vim'
+Plugin 'LanguageTool'
 
 filetype plugin indent on   " REQUIRED!
