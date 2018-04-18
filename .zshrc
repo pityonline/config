@@ -38,7 +38,7 @@ SHELL=`which zsh`
 # 定义颜色 {{{
 export CLICOLOR=1
 # export LSCOLORS=ExFxBxDxCxegedabagacad
-source "`brew --prefix grc`/etc/grc.bashrc"
+source "/usr/local/etc/grc.bashrc"
 
 if [[ ("$TERM" = *256color || "$TERM" = screen* || "$TERM" = xterm*) && -f $HOME/.dir_colors ]]; then
     #use prefefined colors

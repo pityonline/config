@@ -45,7 +45,7 @@ esac
 # export TERM=xterm-256color
 export CLICOLOR=1
 # export LSCOLORS=ExFxBxDxCxegedabagacad
-source "`brew --prefix grc`/etc/grc.bashrc"
+source "/usr/local/etc/grc.bashrc"
 
 # enable color support of ls and also add handy aliases
 # if [ -x /usr/bin/dircolors ]; then
