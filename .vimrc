@@ -595,18 +595,12 @@ no <silent> <leader>b :PluginInstall<cr>
 
 filetype off            " REQUIRED!
 se rtp+=~/.vim/bundle/Vundle.vim/   " rtp = runtimepath
-call vundle#rc()
+call vundle#begin()
 
 " 使用 Vundle 来管理 Vundle，这个必须要有。
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
-
-se bg=dark  " bg = background
-let g:solarized_termcolors=256
-let g:solarized_hitrail=1       " 未生效
-colo solarized
-
 Plugin 'The-NERD-tree'
 Plugin 'tagbar'
 Plugin 'vimwiki'
@@ -644,4 +638,13 @@ Plugin 'enricobacis/paste.vim'
 Plugin 'ack.vim'
 Plugin 'LanguageTool'
 
+call vundle#end()
 filetype plugin indent on   " REQUIRED!
+
+" Solarrized
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+se bg=dark  " bg = background
+let g:solarized_termcolors=256
+let g:solarized_hitrail=1       " 未生效
+colo solarized
