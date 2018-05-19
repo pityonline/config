@@ -29,9 +29,11 @@
     cnt     = count-objects -v      # 统计仓库大小
     d       = diff                  # 差异对比
     dc      = diff --cached         # 显示暂存的差异
+    dcw     = diff --cached --word-diff     # 显示暂存的差异
     ds      = diff --stat           # 显示变更的行数
     dsc     = diff --stat --cached  # 显示暂存的差异的行数
     dt      = difftool              # 差异对比工具
+    dw      = diff --word-diff      # 显示单词差异对比
     f       = fetch                 # featch 更新
     h       = help                  # 帮助
     l       = log                   # 显示提交日志
@@ -56,6 +58,11 @@
     rl      = reset HEAD^           # 回退上一次提交
     rs      = reset                 # 回退
     s       = status                # 显示当前状态
+    sh      = show                  # 显示某个 commit
+    shw     = show --word-diff      # 显示单词差异对比
+    sl      = shortlog              # 显示贡献概况
+    slu     = shortlog -sn          # 统计当前分支贡献情况
+    slua    = shortlog -sn --all    # 统计所有分支贡献情况
     sm      = submodule             # 子模块
     smi     = submodule init        # 初始化子模块
     smu     = submodule update      # 更新子模块
