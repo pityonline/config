@@ -73,6 +73,13 @@
     stp     = stash pop             # 从储藏区中取出一次储藏，储藏区中不保留
     t       = tag                   # 显示 tag 列表
     w       = whatchanged           # 显示简要变更信息
+    appraise = !~/.go/bin/git-appraise
+    change  = codereview change
+    gofmt   = codereview gofmt
+    mail    = codereview mail
+    pending = codereview pending
+    submit  = codereview submit
+    sync    = codereview sync
 [github]
     user    = pityonline
 [core]
