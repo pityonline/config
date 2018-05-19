@@ -23,8 +23,9 @@ alias miredo='sudo /usr/local/Cellar/miredo/1.2.6/sbin/miredo'
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 
 # Homebrew
-alias au='brew update && brew upgrade'
+alias au='brew update && brew upgrade && brew cleanup'
 alias doc='brew doctor'
+alias cask='brew cask'
 alias install='brew install'
 alias remove='brew uninstall'
 alias show='brew info'
