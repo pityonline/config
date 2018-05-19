@@ -1,104 +1,104 @@
 [user]
-    name    = pityonline
-    email   = pityonline@gmail.com
+    name        = pityonline
+    email       = pityonline@gmail.com
 [color]
-    diff    = auto                  # 差异对比高亮
-    branch  = auto                  # 分支高亮
-    status  = auto                  # 状态颜色标识
-    grep    = auto                  # 查找关键字高亮
+    diff        = auto              # 差异对比高亮
+    branch      = auto              # 分支高亮
+    status      = auto              # 状态颜色标识
+    grep        = auto              # 查找关键字高亮
 [alias]
-    a       = add
-    af      = add -f                # 强制跟踪，只在被预先忽略时使用
-    ai      = add -i                # 交互式添加
-    ap      = add -p                # 补丁式添加
-    b       = branch                # 显示当前分支
-    ba      = branch -a             # 显示所有分支，包括 remotes
-    bv      = branch -v             # 显示分支及当前 HEAD
-    bi      = bisect                # 二分法查找
-    bl      = blame                 # 显示文件每行最新修改作者及提交信息
-    ca      = commit -a             # 自动添加变更的文件并提交
-    cam     = commit --amend        # 修改上次提交信息
-    ci      = commit                # 提交
-    cm      = commit -m             # 单行信息提交
-    cv      = commit -v             # 编写提交信息时显示所有变更
-    cf      = config                # 配置
-    cfg     = config --global       # 全局配置
-    cl      = clone                 # clone 仓库
-    co      = checkout              # 检出
-    cp      = cherry-pick           # 挑选提交到分支上
-    cnt     = count-objects -v      # 统计仓库大小
-    d       = diff                  # 差异对比
-    dc      = diff --cached         # 显示暂存的差异
-    dcw     = diff --cached --word-diff     # 显示暂存的差异
-    ds      = diff --stat           # 显示变更的行数
-    dsc     = diff --stat --cached  # 显示暂存的差异的行数
-    dt      = difftool              # 差异对比工具
-    dw      = diff --word-diff      # 显示单词差异对比
-    f       = fetch                 # featch 更新
-    h       = help                  # 帮助
-    l       = log                   # 显示提交日志
-    l1      = log --pretty=oneline --abbrev-commit --graph  # 单行显示简短提交记录
-    lc      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    lg      = log --graph           # 显示分支树
-    lp      = log -p                # 显示所有提交信息
-    lst     = log --stat            # 显示每次提交的文件行数变更
-    lt      = !git log -a --pretty=oneline --graph | git name-rev --stdin --tags | less  # 显示每次提交的 tag 信息
-    ls      = ls-files              # 显示纳入版本控制的文件列表
-    m       = merge                 # 合并
-    mt      = mergetool             # 合并工具
-    o       = !gitopen              # 调用 gitopen 打开远程仓库页面
-    pl      = pull                  # 拉取更新
-    ps      = push                  # 推送更新
-    pt      = push --tags           # 推送 tag 到 remotes
-    r       = remote                # 显示远程名称
-    rv      = remote -v             # 显示远程分支及地址
-    rb      = rebase                # 变基
-    rc      = rm --cached           # 删除暂存的文件
-    rf      = reflog                # 显示操作记录
-    rl      = reset HEAD^           # 回退上一次提交
-    rs      = reset                 # 回退
-    s       = status                # 显示当前状态
-    sh      = show                  # 显示某个 commit
-    shw     = show --word-diff      # 显示单词差异对比
-    sl      = shortlog              # 显示贡献概况
-    slu     = shortlog -sn          # 统计当前分支贡献情况
-    slua    = shortlog -sn --all    # 统计所有分支贡献情况
-    sm      = submodule             # 子模块
-    smi     = submodule init        # 初始化子模块
-    smu     = submodule update      # 更新子模块
-    st      = stash                 # 暂存
-    sta     = stash apply           # 从储藏区中取出一次储藏，储藏区中仍保留
-    std     = stash drop            # 从储藏区中删除一次储藏
-    stl     = stash list            # 显示储藏区列表
-    stp     = stash pop             # 从储藏区中取出一次储藏，储藏区中不保留
-    t       = tag                   # 显示 tag 列表
-    w       = whatchanged           # 显示简要变更信息
-    appraise = !~/.go/bin/git-appraise
-    change  = codereview change
-    gofmt   = codereview gofmt
-    mail    = codereview mail
-    pending = codereview pending
-    submit  = codereview submit
-    sync    = codereview sync
+    a           = add
+    af          = add -f            # 强制跟踪，只在被预先忽略时使用
+    ai          = add -i            # 交互式添加
+    ap          = add -p            # 补丁式添加
+    b           = branch            # 显示当前分支
+    ba          = branch -a         # 显示所有分支，包括 remotes
+    bv          = branch -v         # 显示分支及当前 HEAD
+    bi          = bisect            # 二分法查找
+    bl          = blame             # 显示文件每行最新修改作者及提交信息
+    ca          = commit -a         # 自动添加变更的文件并提交
+    cam         = commit --amend    # 修改上次提交信息
+    ci          = commit            # 提交
+    cm          = commit -m         # 单行信息提交
+    cv          = commit -v         # 编写提交信息时显示所有变更
+    cf          = config            # 配置
+    cfg         = config --global   # 全局配置
+    cl          = clone             # clone 仓库
+    co          = checkout          # 检出
+    cp          = cherry-pick       # 挑选提交到分支上
+    cnt         = count-objects -v  # 统计仓库大小
+    d           = diff              # 差异对比
+    dc          = diff --cached     # 显示暂存的差异
+    dcw         = diff --cached --word-diff     # 显示暂存的差异
+    ds          = diff --stat       # 显示变更的行数
+    dsc         = diff --stat --cached  # 显示暂存的差异的行数
+    dt          = difftool          # 差异对比工具
+    dw          = diff --word-diff  # 显示单词差异对比
+    f           = fetch             # featch 更新
+    h           = help              # 帮助
+    l           = log               # 显示提交日志
+    l1          = log --pretty=oneline --abbrev-commit --graph  # 单行显示简短提交记录
+    lc          = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lg          = log --graph       # 显示分支树
+    lp          = log -p            # 显示所有提交信息
+    lst         = log --stat        # 显示每次提交的文件行数变更
+    lt          = !git log -a --pretty=oneline --graph | git name-rev --stdin --tags | less  # 显示每次提交的 tag 信息
+    ls          = ls-files          # 显示纳入版本控制的文件列表
+    m           = merge             # 合并
+    mt          = mergetool         # 合并工具
+    o           = !gitopen          # 调用 gitopen 打开远程仓库页面
+    pl          = pull              # 拉取更新
+    ps          = push              # 推送更新
+    pt          = push --tags       # 推送 tag 到 remotes
+    r           = remote            # 显示远程名称
+    rv          = remote -v         # 显示远程分支及地址
+    rb          = rebase            # 变基
+    rc          = rm --cached       # 删除暂存的文件
+    rf          = reflog            # 显示操作记录
+    rl          = reset HEAD^       # 回退上一次提交
+    rs          = reset             # 回退
+    s           = status            # 显示当前状态
+    sh          = show              # 显示某个 commit
+    shw         = show --word-diff  # 显示单词差异对比
+    sl          = shortlog          # 显示贡献概况
+    slu         = shortlog -sn      # 统计当前分支贡献情况
+    slua        = shortlog -sn --all# 统计所有分支贡献情况
+    sm          = submodule         # 子模块
+    smi         = submodule init    # 初始化子模块
+    smu         = submodule update  # 更新子模块
+    st          = stash             # 暂存
+    sta         = stash apply       # 从储藏区中取出一次储藏，储藏区中仍保留
+    std         = stash drop        # 从储藏区中删除一次储藏
+    stl         = stash list        # 显示储藏区列表
+    stp         = stash pop         # 从储藏区中取出一次储藏，储藏区中不保留
+    t           = tag               # 显示 tag 列表
+    w           = whatchanged       # 显示简要变更信息
+    appraise    = !~/.go/bin/git-appraise
+    change      = codereview change
+    gofmt       = codereview gofmt
+    mail        = codereview mail
+    pending     = codereview pending
+    submit      = codereview submit
+    sync        = codereview sync
 [github]
-    user    = pityonline
+    user        = pityonline
 [core]
-    excludesfile    = ~/.gitignore_global     # 全局忽略文件
-    quotepath       = false                   # status 显示中文
-    editor          = /usr/local/bin/vim      # commit 语法高亮
+    excludesfile= ~/.gitignore_global   # 全局忽略文件
+    quotepath   = false                 # status 显示中文
+    editor      = /usr/local/bin/vim    # commit 语法高亮
 [push]
-    default = simple
+    default     = simple
 [diff]
-    tool    = vimdiff
-    colorMoved      = default
+    tool        = vimdiff
+    colorMoved  = default
 [difftool]
-    prompt  = false
+    prompt      = false
 [merge]
-    tool    = vimdiff
+    tool        = vimdiff
 # [init]
   # templatedir = ~/git-hooks
 [http]
-    # proxy = socks5://127.0.0.1:1080/
-    cookiefile = ~/.gitcookies
+    # proxy     = socks5://127.0.0.1:1080/
+    cookiefile  = ~/.gitcookies
 [https]
-    # proxy = socks5://127.0.0.1:1080/
+    # proxy     = socks5://127.0.0.1:1080/
