@@ -1,6 +1,6 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim: set filetype=vim foldmethod=marker:
+
+" General{{{
 
 " No compatible
 se nocp                 " nocp = no compatible
@@ -55,10 +55,9 @@ se acd                  " acd = autochdir
 se hlg=cn               " hlg = helplang
 
 filetype plugin indent on   " REQUIRED!
+"}}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Interface{{{
 
 " Set font for Gui/MacVim
 se gfn=Menlo\ for\ Powerline:h14    " gfn = guifont
@@ -116,10 +115,9 @@ se lcs=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
 map <silent> <leader><cr> :noh<cr>
 
 se aw                   " autowrite
+"}}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Indent & filetypes
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indent & filetypes{{{
 
 " 自动缩进
 se ai                   " ai = autoindent
@@ -160,17 +158,15 @@ augroup mermaid
 augroup END
 
 nm <leader>m :!mermaid -p %<Enter>
+"}}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntax
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntax{{{
 
 syn enable
 syn on
+"}}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Alias
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Alias{{{
 
 iab idate <c-r>=strftime("%Y-%m-%d")<CR>
 iab itime <c-r>=strftime("%H:%M")<CR>
@@ -181,10 +177,9 @@ iab """"" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 iab ##### #############################################################################
 iab ===== =============================================================================
 iab ***** *****************************************************************************
+"}}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Windows Management
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Windows Management{{{
 
 nn wn <C-w>n            " new split window vertical
 nn wv <C-w>v            " copy horizontal
@@ -206,10 +201,9 @@ nn wo :vne<cr>          " new split window horizontal
 " Set Up/Down non-linewise
 no <Up> gk
 no <Down> gj
+"}}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Functions{{{
 
 " HelpHelper
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -303,10 +297,9 @@ endfunction
 
 autocmd FileType c,perl,erlang,python nmap <silent> K :call HelpHelper( "" )<CR>
 autocmd FileType c,perl,erlang,python nmap <silent> gK :call HelpHelper( "InNewTab" )<CR>
+"}}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins{{{
 
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -624,8 +617,9 @@ let g:ycm_warning_symbol = '>*'
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+"}}}
 
-" Vundle.vim
+" Vundle.vim{{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 no <silent> <leader>b :PluginInstall<cr>
@@ -679,11 +673,12 @@ Plugin 'VincentCordobes/vim-translate'
 
 call vundle#end()
 filetype plugin indent on   " REQUIRED!
+"}}}
 
-" Solarrized
+" Solarrized{{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 se bg=dark  " bg = background
 let g:solarized_termcolors=256
 let g:solarized_hitrail=1       " 未生效
-colo solarized
+colo solarized"}}}
