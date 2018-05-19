@@ -98,4 +98,7 @@
 # [init]
   # templatedir = ~/git-hooks
 [http]
-    proxy =
+    # proxy = socks5://127.0.0.1:1080/
+    cookiefile = ~/.gitcookies
+[https]
+    # proxy = socks5://127.0.0.1:1080/
