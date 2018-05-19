@@ -659,6 +659,7 @@ Plugin 'enricobacis/paste.vim'
 Plugin 'ack.vim'
 Plugin 'LanguageTool'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'VincentCordobes/vim-translate'
 
 call vundle#end()
 filetype plugin indent on   " REQUIRED!
