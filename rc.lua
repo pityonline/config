@@ -16,14 +16,14 @@ naughty.config.default_preset.position         = "bottom_right"
 -- Load Debian menu entries
 require("debian.menu")
 
--- auto run app  
+-- auto run app
 
-awful.util.spawn_with_shell("ibus-daemon -x -r -d")  
--- awful.util.spawn_with_shell("nm-applet --sm-disable")  
-awful.util.spawn_with_shell("gnome-power-manager")  
-awful.util.spawn_with_shell("gnome-sound-applet")  
-awful.util.spawn_with_shell("dropbox start")  
-awful.util.spawn_with_shell("/home/pity/scripts/numpad")  
+awful.util.spawn_with_shell("ibus-daemon -x -r -d")
+-- awful.util.spawn_with_shell("nm-applet --sm-disable")
+awful.util.spawn_with_shell("gnome-power-manager")
+awful.util.spawn_with_shell("gnome-sound-applet")
+awful.util.spawn_with_shell("dropbox start")
+awful.util.spawn_with_shell("/home/pity/scripts/numpad")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -97,7 +97,7 @@ layouts =
 -- for s = 1, screen.count() do
 --     -- 每个屏幕都有一个tag的table(这里所说的table指的是lua中的概念，大致等价于数组）
 --     tags[s] = {}
---     
+--
 --     -- 每个屏幕创建9个tag，把9改为其他数字就能改变tag的数目
 --     for tagnumber = 1, 9 do
 --         tags[s][tagnumber] = tag({ name = tagnumber, layout = layouts[1] })
@@ -106,7 +106,7 @@ layouts =
 --     -- 另最后一个屏幕的第一个tag处于选中状态
 --     tags[s][2].selected = true
 -- end
--- 
+--
 -- -- 默认的tag名字是数字1-9，对于鼠标点击来说有点太小。
 -- -- 你可以通过如下的方法设置自己的tag名称
 -- tags[1][1].name = "Term"

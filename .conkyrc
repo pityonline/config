@@ -77,7 +77,7 @@ ${font DotMatrix:style=bold:pixelsize=28}${alignc}${time %H:%M:%S}${font}
 $hr
 ${font 微软雅黑:style=Bold:pixelsize=20}${alignc}${color red} 距离五一还有 ${color}${color yellow}${exec echo $((($(date --date=2011-5-1 +%s)-$(date +%s))/86400))}${color}${color red} 天 ${color}${font}
 $hr
-${alignc} ${execi 99999 lsb_release -d -s -c | tr -s "\n" " "} $kernel 
+${alignc} ${execi 99999 lsb_release -d -s -c | tr -s "\n" " "} $kernel
 ${color green}运行时间:${color}${alignr} $uptime
 ${color green}电池:${color} ${color red}${battery_percent BAT0}%${color} ${color yellow}${battery_bar BAT0 4}${color}
 CPU: ${execi 99999 cat /proc/cpuinfo | grep "model name" -m1 | cut -d":" -f2 | cut -d" " -f2-|cut -d" " -f2-}

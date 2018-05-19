@@ -7,7 +7,7 @@
 #   }
 #   export PROMPT_COMMAND="_update_ps1"
 
-# export PS1='\e[01;31m\A \e[00m\e[01;32m\w\e[00m\$ ' 
+# export PS1='\e[01;31m\A \e[00m\e[01;32m\w\e[00m\$ '
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
