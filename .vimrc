@@ -597,6 +597,18 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(log|jpg|png|jpeg)$',
   \ }
 
+" YouCompleteMe
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set completeopt=longest,menu
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '>*'
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
 " Vundle.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -646,6 +658,7 @@ Plugin 'cocoa.vim'
 Plugin 'enricobacis/paste.vim'
 Plugin 'ack.vim'
 Plugin 'LanguageTool'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on   " REQUIRED!
