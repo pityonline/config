@@ -458,6 +458,7 @@ let g:previm_open_cmd = 'open -a Safari'
 " vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let g:go_list_type                   = "quickfix"
 let g:go_fmt_autosave                = 1
 let g:go_fmt_command                 = "goimports"
 let g:go_test_timeout                = '10s'    " default to 10 seconds
@@ -476,7 +477,6 @@ let g:go_highlight_generate_tags     = 1
 let g:go_metalinter_enabled          = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave         = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:go_metalinter_autosave_enabled = ['golint']
 let g:go_metalinter_deadline         = "5s"
 
 let g:go_auto_type_info              = 1
