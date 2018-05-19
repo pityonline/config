@@ -438,7 +438,23 @@ let Tlist_Vimwiki_Settings        = 'wiki;h:Headers'
 
 " 打开文件时检查
 let g:syntastic_check_on_open      = 1
-let g:syntastic_sh_shellcheck_args = "-e SC2029 -e SC2086 -e SC2162 -e SC2164 -e SC1117 -e SC2103"
+
+" 忽略一些文件类型的检查，如某个目录中的文件，或以某种扩展名结尾的文件
+" let g:syntastic_ignore_files = ['\m^/usr/include/', '\m\c\.xml']
+
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": [],
+    \ "passive_filetypes": ["xml"]
+    \}
+
+" shell
+let g:syntastic_sh_shellcheck_args = "-e SC1117"
+
+" python
+let g:syntastic_python_checkers = ['flake8', 'pylint']
+" let g:syntastic_python_pylint_args="-d msg1,msg2"
+let g:syntastic_python_flake8_args='--ignore=E302,E305,E501'
 
 " easymotion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
