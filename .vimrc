@@ -206,7 +206,6 @@ no <Down> gj
 " Functions{{{
 
 " HelpHelper
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ flw 写的非常牛逼的 K 功能重载代码，可以在 vim 内部显示各种语言的帮助
 """ gK 则在新标签页内打开帮助
@@ -301,14 +300,13 @@ autocmd FileType c,perl,erlang,python nmap <silent> gK :call HelpHelper( "InNewT
 
 " Plugins{{{
 
-" NERDTree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree{{{2
 
 no <silent> <leader>n :NERDTreeToggle<CR>
+"}}}
 
-" Vimwiki
+" Vimwiki{{{2
 " from http://wiki.ktmud.com/tips/vim/vimwiki-guide.html
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " 使用 <F4> 转换所有 wiki 为 html
 map <F4> :VimwikiAll2HTML<cr>
@@ -379,20 +377,20 @@ let g:vimwiki_valid_html_tags     = 'b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1'
 
 " 对设置了的文件类型不进行扩展
 let g:vimwiki_file_exts           = 'c, cpp, wav, txt, h, hpp, zip, sh, awk, ps, pdf'
+"}}}
 
-" Calendar
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Calendar{{{2
 
 no <silent> <leader>c :Calendar<CR>
+"}}}
 
-" Renamer
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Renamer{{{2
 
 no <silent> <leader>r :Renamer<cr>
 no <silent> <leader>s :Ren<cr>
+"}}}
 
-" Powerline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Powerline{{{2
 
 " Set terminal color 256
 se t_Co=256 " REQUIRED!
@@ -407,9 +405,9 @@ let g:Powerline_cache_enabled = 0
 " Solve Powerline color-lost after save a file.
 " au bufwritepost .vimrc call Pl#Load()  " REQUIRED! 这句必须写在 fast-saving 后面，写在这里不能生效。
 " au BufDelete * call Pl#Load()
+"}}}
 
-" Taglist
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Taglist{{{2
 
 " nn <silent> <leader>t :TlistToggle<CR>
 let Tlist_Ctags_Cmd               = '`which ctags`'
@@ -425,9 +423,9 @@ au CursorMovedI * silent! TlistHighlightTag
 
 " vimwiki toc support
 let Tlist_Vimwiki_Settings        = 'wiki;h:Headers'
+"}}}
 
-" Syntastic
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic{{{2
 
 " 打开文件时检查
 let g:syntastic_check_on_open      = 1
@@ -448,24 +446,25 @@ let g:syntastic_sh_shellcheck_args = "-e SC1117"
 let g:syntastic_python_checkers = ['flake8', 'pylint']
 " let g:syntastic_python_pylint_args="-d msg1,msg2"
 let g:syntastic_python_flake8_args='--ignore=E302,E305,E501'
+"}}}
 
-" easymotion
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" easymotion{{{2
 
 let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj'
+"}}}
 
-" SQL Server format
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SQL Server format{{{2
+
 let g:sqlutil_keyword_case   = '\U'
 let g:sqlutil_cmd_terminator = "\ngo"
+"}}}
 
-" previm
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" previm{{{2
 
 let g:previm_open_cmd = 'open -a Safari'
+"}}}
 
-" vim-go
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-go{{{2
 
 let g:go_list_type                   = "quickfix"
 let g:go_fmt_autosave                = 1
@@ -501,14 +500,14 @@ autocmd Filetype go command! -bang A  call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+"}}}
 
-" tagbar
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tagbar{{{2
+
 nn <silent> <leader>t :TagbarToggle<CR>
 " au VimEnter * nested :TagbarOpen
 
 " gotags
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
@@ -537,18 +536,18 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
+"}}}
 
-" vim-easy-align
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-easy-align{{{2
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+"}}}
 
-" mkdx.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" mkdx.vim{{{2
 
 " :h mkdx-var-map-prefix
 let g:mkdx#map_prefix = '\'
@@ -591,23 +590,24 @@ let g:mkdx#toc_list_token = '-'
 
 " :h mkdx-var-link-as-img-pat
 let g:mkdx#link_as_img_pat = 'a\?png\|jpe\?g\|gif'
+"}}}
 
-" LanguageTool
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LanguageTool{{{2
+
 let g:languagetool_jar='/usr/local/Cellar/languagetool/4.1/libexec/languagetool-commandline.jar'
 let g:languagetool_lang='en'
+"}}}
 
-" CtrlP
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CtrlP{{{2
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git)$',
   \ 'file': '\v\.(log|jpg|png|jpeg)$',
   \ }
+"}}}
 
-" YouCompleteMe
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YouCompleteMe{{{2
 
 set completeopt=longest,menu
 let g:ycm_error_symbol = '>>'
@@ -618,9 +618,9 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 "}}}
+"}}}
 
 " Vundle.vim{{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 no <silent> <leader>b :PluginInstall<cr>
 
@@ -676,7 +676,6 @@ filetype plugin indent on   " REQUIRED!
 "}}}
 
 " Solarrized{{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 se bg=dark  " bg = background
 let g:solarized_termcolors=256
