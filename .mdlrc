@@ -4,8 +4,9 @@
 # 检查 git 跟踪的文件
 git_recurse true
 
-rules "MD001", "MD002", "MD003", "MD004", "MD005", "MD006", "MD007", "MD008", "MD009", "MD011", "MD012", "MD014", "MD015", "MD016", "MD017", "MD018", "MD019", "MD020", "MD021", "MD023", "MD025", "MD027", "MD028", "MD030", "MD035", "MD038", "MD039", "MD040", "MD041", "MD042"
+rules "MD001", "MD002", "MD003", "MD004", "MD005", "MD006", "MD008", "MD009", "MD011", "MD012", "MD014", "MD015", "MD016", "MD017", "MD018", "MD019", "MD020", "MD021", "MD023", "MD025", "MD027", "MD028", "MD030", "MD035", "MD038", "MD039", "MD040", "MD041", "MD042"
 
+exclude "MD007" # Unordered list indentation，忽略四个空格的子列表缩进
 exclude "MD010" # Hard tabs，引用 Go/Makefile 源码时忽略
 exclude "MD013" # Line length，长度允许超过 80
 exclude "MD022" # Headers should be surrounded by blank lines，允许连续标题不换行
