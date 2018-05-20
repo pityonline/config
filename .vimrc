@@ -426,9 +426,16 @@ let Tlist_Vimwiki_Settings        = 'wiki;h:Headers'
 "}}}
 
 " Syntastic{{{2
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" 打开文件时检查
-let g:syntastic_check_on_open      = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+
+let g:syntastic_go_checkers = ['gometalinter']
+let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=vet', '--enable=golint']
 
 " 忽略一些文件类型的检查，如某个目录中的文件，或以某种扩展名结尾的文件
 " let g:syntastic_ignore_files = ['\m^/usr/include/', '\m\c\.xml']
@@ -643,7 +650,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/gv.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'Syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
