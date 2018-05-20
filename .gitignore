@@ -1,7 +1,0 @@
-*~
-*.swp
-.DS_Store
-openvpn/*
-*.cache
-*.terminal
-*.itermcolors
