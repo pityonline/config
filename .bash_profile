@@ -84,3 +84,7 @@ source /usr/local/etc/bash_completion.d/git-completion.bash
 # Alias
 source $HOME/.alias
 eval "$(hub alias -s)"
+
+# go
+export GOPATH=~/.go
+export PATH="/usr/local/sbin:$HOME/bin:$GOPATH/bin:$PATH"

@@ -634,3 +634,7 @@ hash -d perl="$HOME/repo/pity/perl"
 # export PATH="$HOME/.plenv/bin:$PATH"
 eval "$(plenv init -)"
 eval "$(hub alias -s)"
+
+# go
+export GOPATH=~/.go
+export PATH="/usr/local/sbin:$HOME/bin:$GOPATH/bin:$PATH"
