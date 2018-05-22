@@ -638,3 +638,6 @@ eval "$(hub alias -s)"
 # go
 export GOPATH=~/.go
 export PATH="/usr/local/sbin:$HOME/bin:$GOPATH/bin:$PATH"
+
+# GPG
+export GPG_TTY=$(tty)
