@@ -641,3 +641,6 @@ export PATH="/usr/local/sbin:$HOME/bin:$GOPATH/bin:$PATH"
 
 # GPG
 export GPG_TTY=$(tty)
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
