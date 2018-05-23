@@ -644,3 +644,6 @@ export GPG_TTY=$(tty)
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# ShellCheck 忽略规则
+export SHELLCHECK_OPTS="-e SC1117 -e SC2086"
