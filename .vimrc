@@ -158,6 +158,14 @@ augroup mermaid
 augroup END
 
 nm <leader>m :!mermaid -p %<Enter>
+
+" auto remove trailing spaces when save
+" https://unix.stackexchange.com/questions/75430/how-to-automatically-strip-trailing-spaces-on-save-in-vi-and-vim
+autocmd BufWritePre * :%s/\s\+$//e
+
+" auto remove blank lines at EOF when save
+" https://stackoverflow.com/questions/7495932/how-can-i-trim-blank-lines-at-the-end-of-file-in-vim
+autocmd BufWritePre * :%s#\($\n\s*\)\+\%$##e
 "}}}
 
 " Syntax{{{
