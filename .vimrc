@@ -77,6 +77,9 @@ se title
 " Show ruler
 se ru                   " ru = ruler
 
+" Show column at line 80
+se cc=80                " cc = colorcolumn
+
 " Show mode
 se smd                  " smd = show mode
 se wmnu                 " wmnu = wildmenu
