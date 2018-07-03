@@ -636,6 +636,10 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 "}}}
+
+" editorconfig{{{2
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']"}}}
+
 "}}}
 
 " Vundle.vim{{{
@@ -678,7 +682,7 @@ Plugin 'Windows-PowerShell-Syntax-Plugin'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'editorconfig-vim'
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-flake8'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'SidOfc/mkdx'
