@@ -1,6 +1,7 @@
 [user]
     name        = pityonline
     email       = pityonline@gmail.com
+    signingkey  = 89C97C8DF02C633E
 [color]
     diff        = auto              # 差异对比高亮
     branch      = auto              # 分支高亮
@@ -102,3 +103,7 @@
     cookiefile  = ~/.gitcookies
 [https]
     # proxy     = socks5://127.0.0.1:1080/
+[gpg]
+    program     = gpg
+[commit]
+    gpgsign     = true
