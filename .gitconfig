@@ -14,7 +14,7 @@
     ap          = add -p            # 补丁式添加
     b           = branch            # 显示当前分支
     ba          = branch -a         # 显示所有分支，包括 remotes
-    bv          = branch -v         # 显示分支及当前 HEAD
+    bv          = branch -vv        # 显示分支及当前 HEAD
     bi          = bisect            # 二分法查找
     bl          = blame             # 显示文件每行最新修改作者及提交信息
     ca          = commit -a         # 自动添加变更的文件并提交
@@ -36,6 +36,7 @@
     dt          = difftool          # 差异对比工具
     dw          = diff --word-diff  # 显示单词差异对比
     f           = fetch             # featch 更新
+    graphviz    = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
     h           = help              # 帮助
     l           = log               # 显示提交日志
     l1          = log --pretty=oneline --abbrev-commit --graph  # 单行显示简短提交记录
@@ -43,6 +44,7 @@
     lg          = log --graph       # 显示分支树
     lp          = log -p            # 显示所有提交信息
     lst         = log --stat        # 显示每次提交的文件行数变更
+    lstu        = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status # 显示用户修改了哪些文件
     lt          = !git log -a --pretty=oneline --graph | git name-rev --stdin --tags | less  # 显示每次提交的 tag 信息
     ls          = ls-files          # 显示纳入版本控制的文件列表
     m           = merge             # 合并
@@ -58,6 +60,7 @@
     rf          = reflog            # 显示操作记录
     rl          = reset HEAD^       # 回退上一次提交
     rs          = reset             # 回退
+    recent      = "!r() { cur=$(git rev-parse --abbrev-ref HEAD); git for-each-ref --sort=-committerdate refs/heads/ --format='%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' | sed \"s/m${cur}|/m* ${cur}|/\" | column -ts'|'; }; r"
     s           = status            # 显示当前状态
     sh          = show              # 显示某个 commit
     shw         = show --word-diff  # 显示单词差异对比
