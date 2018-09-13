@@ -43,7 +43,7 @@ se fo+=mM               " fo = formatoptions
 map Q gq
 
 " Set SPACE to scroll down
-nn <Space> <C-f>
+nn <Space> <C-d>
 
 " Set paste toggle key
 se pt=<F10>             " pt = pastetoggle
@@ -60,7 +60,7 @@ filetype plugin indent on   " REQUIRED!
 " Interface{{{
 
 " Set font for Gui/MacVim
-se gfn=Menlo\ for\ Powerline:h14    " gfn = guifont
+se gfn=Menlo\ for\ Powerline:h16    " gfn = guifont
 
 " Show line numbers
 se nu                   " nu = number
