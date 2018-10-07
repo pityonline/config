@@ -173,6 +173,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 " auto remove blank lines at EOF when save
 " https://stackoverflow.com/questions/7495932/how-can-i-trim-blank-lines-at-the-end-of-file-in-vim
 autocmd BufWritePre * :%s#\($\n\s*\)\+\%$##e
+
+" not for wiki
+au BufNewFile,BufRead,BufEnter *.wiki :RainbowToggleOff
 "}}}
 
 " Syntax{{{
@@ -314,6 +317,9 @@ autocmd FileType c,perl,erlang,python nmap <silent> gK :call HelpHelper( "InNewT
 "}}}
 
 " Plugins{{{
+
+" rainbow{{{
+let g:rainbow_active = 1"}}}
 
 " NERDTree{{{2
 
@@ -702,6 +708,7 @@ Plugin 'ack.vim'
 Plugin 'LanguageTool'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'VincentCordobes/vim-translate'
+Plugin 'luochen1990/rainbow'
 
 call vundle#end()
 filetype plugin indent on   " REQUIRED!
