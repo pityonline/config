@@ -86,6 +86,10 @@ se wmnu                 " wmnu = wildmenu
 
 se bs=eol,start,indent  " bs = backspace
 
+" linebreak
+" not good for Chinese
+se lbr
+
 " Change the status line color
 " http://vim.wikia.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
 " Always show status bar
