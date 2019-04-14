@@ -714,6 +714,10 @@ Plugin 'LanguageTool'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'VincentCordobes/vim-translate'
 Plugin 'luochen1990/rainbow'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 filetype plugin indent on   " REQUIRED!
