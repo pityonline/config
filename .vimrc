@@ -146,6 +146,7 @@ au FileType ruby        se et sw=2 ts=2 sts=2
 au FileType html        se et sw=2 ts=2 sts=2
 au FileType yaml,yml    se et sw=2 ts=2 sts=2
 au BufEnter *.tmpl      se et sw=2 ts=2 sts=2
+au FileType markdown    se et sw=4 ts=4 sts=4
 
 " do not expand tab in Makefiles
 au FileType make,go             se noet
