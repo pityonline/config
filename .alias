@@ -22,7 +22,10 @@ alias irc='irssi'
 alias miredo='sudo /usr/local/Cellar/miredo/1.2.6/sbin/miredo'
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 alias wgup='sudo wg-quick up'
-alias ncdu="ncdu --color dark"
+alias ncdu="ncdu --color dark -rr -x"
+alias flushdns='sudo killall -HUP mDNSResponder; sudo killall mDNSResponderHelper; sudo dscacheutil -flushcache'
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias apt="brew"
 
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 # use ctrl-o to open file
