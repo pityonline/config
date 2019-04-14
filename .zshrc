@@ -4,7 +4,7 @@
 #
 # vim:fdm=marker
 # Use zsh 5.0.0
-# export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 # 预配置 {{{
 # 如果不是交互shell就直接结束 (unix power tool, 2.11)
@@ -631,7 +631,7 @@ hash -d work="$HOME/Documents/work"
 hash -d rime="$HOME/Library/Rime"
 hash -d perl="$HOME/repo/pity/perl"
 
-# export PATH="$HOME/.plenv/bin:$PATH"
+export PATH="$HOME/.plenv/bin:$PATH"
 eval "$(plenv init -)"
 eval "$(hub alias -s)"
 
