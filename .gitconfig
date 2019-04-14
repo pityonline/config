@@ -35,6 +35,7 @@
     dsc         = diff --stat --cached  # 显示暂存的差异的行数
     dt          = difftool          # 差异对比工具
     dw          = diff --word-diff  # 显示单词差异对比
+    dws         = diff --ws-error-highlight=all # 对比差异时显示空白字符
     f           = fetch             # featch 更新
     graphviz    = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
     h           = help              # 帮助
