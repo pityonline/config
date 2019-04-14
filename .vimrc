@@ -153,7 +153,7 @@ au FileType make,go             se noet
 
 " fix crontab: temp file must be edited in place
 autocmd Filetype crontab        setlocal nobackup nowritebackup
-autocmd Filetype gitcommit      se spell textwidth=72
+autocmd Filetype gitcommit      se spell textwidth=72 cc=72
 
 " use perl sytax highlight on Rexfile
 au BufRead,BufWrite *Rexfile    se ft=perl
