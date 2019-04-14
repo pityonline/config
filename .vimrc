@@ -141,6 +141,7 @@ se ts=4                 " tabstop
 se sts=4                " softtabstop
 
 " use speicified indent on different filetypes " why setlocal?
+au FileType debcontrol  se et sw=1 ts=1 sts=1
 au FileType ruby        se et sw=2 ts=2 sts=2
 au FileType html        se et sw=2 ts=2 sts=2
 au FileType yaml,yml    se et sw=2 ts=2 sts=2
@@ -155,6 +156,9 @@ autocmd Filetype gitcommit      se spell textwidth=72
 
 " use perl sytax highlight on Rexfile
 au BufRead,BufWrite *Rexfile    se ft=perl
+
+" disable sh ft on *.install files
+au BufRead,BufWrite *.install   se ft=install
 
 " Mermaid auto compile
 " au BufEnter *.mmd,*.mermaid set Filetype mermaid bufwritepost !mermaid -p %
