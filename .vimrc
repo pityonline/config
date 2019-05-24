@@ -718,6 +718,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'NLKNguyen/papercolor-theme'
 
 call vundle#end()
 filetype plugin indent on   " REQUIRED!
@@ -728,4 +729,4 @@ filetype plugin indent on   " REQUIRED!
 se bg=dark  " bg = background
 let g:solarized_termcolors=256
 let g:solarized_hitrail=1       " 未生效
-colo solarized"}}}
+colo papercolor"}}}
